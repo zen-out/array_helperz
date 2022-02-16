@@ -282,7 +282,6 @@ console.log(output)
   ]
 }
      * @author lezzles11 :) www.github.com/lezzles11
-     * @author lezzles11 :) www.github.com/lezzles11
      * @date 2022-02-17
      * @param {array} of objects
      * @param {any} groupByCondition

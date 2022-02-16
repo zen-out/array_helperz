@@ -2,6 +2,16 @@
 
 ## ArrayOfObjectsHelper
 
+### To start 
+
+npm install array_helperz 
+
+```js
+const {
+    arrz
+} = require("array_helperz")
+```
+
 **Kind**: global class  
 **Date**: 2022-02-17  
 
