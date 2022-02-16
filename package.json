@@ -4,7 +4,11 @@
     "description": "array of objects utils that will probably, definitely, save you a lot of time",
     "main": "index.js",
     "scripts": {
-        "test": "node runTest.js"
+        "test": "node runTest.js",
+        "docs": "cd .. && node save.js --folder node_baseTest",
+        "publish": "npm version patch && npm publish",
+        "commitThis": "git add . && git commit -m 'updated' && git push",
+        "start": "npm run commitThis && npm run publish"
     },
     "keywords": [
         "array",

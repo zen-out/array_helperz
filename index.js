@@ -72,7 +72,7 @@ let output = arrz.filterValues(input, "hello", ["problem"])
          */
     filterValues(array, keyword, arrOfKeys) {
             let result = matchSorter(array, keyword, { keys: arrOfKeys })
-            return this.trimArr(result);
+            return result;
         }
         /**
          * 描述
@@ -89,7 +89,7 @@ let output = arrz.filterValues(input, "hello", ["problem"])
                 }
             }
             let result = _.sortBy(array, [property])
-            return this.trimArr(result);
+            return result;
         }
         /**
          * 描述
@@ -107,7 +107,7 @@ let output = arrz.filterValues(input, "hello", ["problem"])
                 }
             }
             let result = _.sortBy(array, [property])
-            return this.trimArr(result.reverse());
+            return result.reverse()
         }
         /**
          * @example
@@ -137,7 +137,7 @@ console.log(output)
                     newArr.push(array[i])
                 }
             }
-            return this.trimArr(newArr);
+            return newArr;
         }
         /**
          * @example
@@ -167,7 +167,7 @@ console.log(output)
                     newArr.push(array[i])
                 }
             }
-            return this.trimArr(newArr);
+            return newArr
         }
         /**
          * @example
@@ -203,9 +203,9 @@ console.log(output)
             }
             if (limit) {
                 let result = sorted.slice(0, limit)
-                return this.trimArr(result);
+                return result;
             } else {
-                return this.trimArr(sorted)
+                return sorted
             }
         }
         /**
@@ -246,9 +246,9 @@ console.log(output)
         }
         if (limit) {
             let result = sorted.slice(0, limit)
-            return this.trimArr(result);
+            return result;
         } else {
-            return this.trimArr(sorted)
+            return sorted
         }
     }
 
@@ -290,7 +290,7 @@ console.log(output)
      */
     group(data, groupByCondition) {
         let grouped = _.groupBy(data, groupByCondition)
-        return this.trimArr(grouped)
+        return grouped
     }
 
     /**
@@ -382,7 +382,7 @@ console.log(output)
                 result.push(object)
             }
             console.log(result)
-            return this.trimArr(result)
+            return result
 
         }
         /**
@@ -413,7 +413,7 @@ console.log(output)
             intersectedObject[key] = rest[0][key]
             return intersectedObject
         }, {})
-        return this.trimArr(result)
+        return result
     }
 
 
