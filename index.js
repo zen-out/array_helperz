@@ -72,7 +72,7 @@ let output = arrz.filterValues(input, "hello", ["problem"])
          */
     filterValues(array, keyword, arrOfKeys) {
             let result = matchSorter(array, keyword, { keys: arrOfKeys })
-            return result;
+            return this.trimArr(result);
         }
         /**
          * 描述
@@ -89,7 +89,7 @@ let output = arrz.filterValues(input, "hello", ["problem"])
                 }
             }
             let result = _.sortBy(array, [property])
-            return result;
+            return this.trimArr(result);
         }
         /**
          * 描述
@@ -107,7 +107,7 @@ let output = arrz.filterValues(input, "hello", ["problem"])
                 }
             }
             let result = _.sortBy(array, [property])
-            return result.reverse()
+            return this.trimArr(result.reverse())
         }
         /**
          * @example
@@ -131,13 +131,13 @@ console.log(output)
          * @returns {array} of objects
          */
     contains(array, property, value) {
-            let newArr = []
+            let result = []
             for (let i = 0; i < array.length; i++) {
-                if (array[i][property].includes(value)) {
-                    newArr.push(array[i])
+                if (array[i][property] === value) {
+                    result.push(array[i])
                 }
             }
-            return newArr;
+            return this.trimArr(result)
         }
         /**
          * @example
@@ -161,13 +161,13 @@ console.log(output)
          * @returns {array} of objects
          */
     doesNotContain(array, property, value) {
-            let newArr = []
+            let result = []
             for (let i = 0; i < array.length; i++) {
-                if (!array[i][property].includes(value)) {
-                    newArr.push(array[i])
+                if (!array[i][property] !== value) {
+                    result.push(array[i])
                 }
             }
-            return newArr
+            return this.trimArr(result)
         }
         /**
          * @example
@@ -203,9 +203,9 @@ console.log(output)
             }
             if (limit) {
                 let result = sorted.slice(0, limit)
-                return result;
+                return this.trimArr(result);
             } else {
-                return sorted
+                return this.trimArr(sorted)
             }
         }
         /**
@@ -246,9 +246,9 @@ console.log(output)
         }
         if (limit) {
             let result = sorted.slice(0, limit)
-            return result;
+            return this.trimArr(result)
         } else {
-            return sorted
+            return this.trimArr(sorted)
         }
     }
 
@@ -290,7 +290,7 @@ console.log(output)
      */
     group(data, groupByCondition) {
         let grouped = _.groupBy(data, groupByCondition)
-        return grouped
+        return this.trimArr(grouped)
     }
 
     /**
@@ -381,8 +381,7 @@ console.log(output)
                 object[`${secondTableName}`] = mapped[i][`tableName`]
                 result.push(object)
             }
-            console.log(result)
-            return result
+            return this.trimArr(result)
 
         }
         /**
