@@ -9,4 +9,4 @@ explain_me.readme("array_helperz")
 explain_me.html("array_helperz")
 
 // this adds scripts to your package.json file - test and docs
-explain_me.addScript()
+explain_me.addScript("array_helperz")
