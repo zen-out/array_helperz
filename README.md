@@ -3,7 +3,7 @@
 ``` 
 npm install array_helperz
 ```
-
+```
 const {arrz} = require("array_helperz")
 ```
 
