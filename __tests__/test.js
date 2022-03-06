@@ -1,31 +1,5 @@
 const t = require("node_basetest")
-const { problem, task } = require("./data.js")
-const { arrz } = require("../src/index.js")
-
-function getFilterAndSortObject() {
-    let filtered = arrz.filterAndSortObject(problem, "created", true, 10)
-    console.log(filtered)
-    return filtered;
-}
-let data = getFilterAndSortObject()
-let bestArrs = [{ id: 1, }]
-
-let dictionary = {
-    created: "date",
-    public: "boolean",
-    problem: "string",
-    seconds: "number"
-}
-
-function testSorts(arr, firstInstanceShould, lastInstanceShould) {
-    let first = arr[0]
-    let last = arr[arr.length - 1]
-    let stringedFirst = JSON.stringify(first)
-    let stringedLast = JSON.stringify(last)
-    t.HAS(stringedFirst, firstInstanceShould)
-    t.HAS(stringedLast, lastInstanceShould)
-
-}
+const { arrz } = require("../index.js")
 
 function testArrays(arrOne, arrTwo) {
     let stringedOne = JSON.stringify(arrOne)
