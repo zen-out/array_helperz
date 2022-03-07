@@ -1,6 +1,6 @@
 import _ from "lodash"
 import { matchSorter } from "match-sorter"
-import formatDateTime from "when_you_free"
+import { format } from "when_you_free"
 export class ArrayOfObjectsHelper {
     /**
      * new arrz = new ArrayOfObjectsHelper
@@ -109,7 +109,7 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
     sortAsc(array, property, type) {
             if (type === "date") {
                 for (let i = 0; i < array.length; i++) {
-                    array[i][property] = formatDateTime.format(array[i][property], "dateInput")
+                    array[i][property] = format(array[i][property], "dateInput")
                 }
             }
             let result = _.sortBy(array, [property])
@@ -137,7 +137,7 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 
             if (type === "date") {
                 for (let i = 0; i < array.length; i++) {
-                    array[i][property] = formatDateTime.format(array[i][property], "dateInput")
+                    array[i][property] = format(array[i][property], "dateInput")
                 }
             }
             let result = _.sortBy(array, [property])
