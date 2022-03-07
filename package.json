@@ -1,6 +1,6 @@
 {
     "name": "array_helperz",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "description": "array of objects utils that will probably, definitely, save you a lot of time",
     "main": "index.js",
     "scripts": {
