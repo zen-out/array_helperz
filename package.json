@@ -47,5 +47,8 @@
         "rimraf": "latest",
         "webpack": "latest",
         "webpack-cli": "latest"
+    },
+    "exports": {
+        ".": "./dist/index.js"
     }
 }

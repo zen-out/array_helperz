@@ -134,7 +134,6 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 * @returns {array} of objects
 */
     sortDesc(array, property, type) {
-
             if (type === "date") {
                 for (let i = 0; i < array.length; i++) {
                     array[i][property] = formatDateToPost(array[i][property])
