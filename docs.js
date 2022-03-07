@@ -1,12 +1,13 @@
 const explain_me = require("explain_me")
 
-// make sure all your files are in src/
+// run to set up // npm install 
+// explain_me.addScript("moduleName")
+// explain_me.makeGlobal("array_helperz")
 
-// this generates read me from src folder
-explain_me.readme("array_helperz")
+// run after you are finished 
+// explain_me.readme("array_helperz")
+// explain_me.html("array_helperz")
+// explain_me.copyHTML("array_helperz")
 
-// this generates docs (html pages)
-explain_me.html("array_helperz")
-
-// this adds scripts to your package.json file - test and docs
-explain_me.addScript("array_helperz")
+let getInstructions = explain_me.addInstructions("array_helperz")
+console.log(getInstructions)

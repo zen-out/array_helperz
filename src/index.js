@@ -1,8 +1,7 @@
-const _ = require("lodash")
-const { matchSorter } = require("match-sorter")
-const { formatDateTime } = require("format_date_time_moment/node")
-
-class ArrayOfObjectsHelper {
+import _ from "lodash"
+import { matchSorter } from "match-sorter"
+import formatDateTime from "when_you_free"
+export class ArrayOfObjectsHelper {
     /**
      * new arrz = new ArrayOfObjectsHelper
      * @author zen-out
@@ -255,5 +254,5 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 
 
 }
-let arrz = new ArrayOfObjectsHelper()
-module.exports = { arrz }
+
+export let arrz = new ArrayOfObjectsHelper()

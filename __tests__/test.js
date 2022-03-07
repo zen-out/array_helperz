@@ -1,5 +1,5 @@
 const t = require("node_basetest")
-const { arrz } = require("../index.js")
+const { arrz } = require("../dist/index.js")
 
 function testArrays(arrOne, arrTwo) {
     let stringedOne = JSON.stringify(arrOne)
