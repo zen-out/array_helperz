@@ -1,4 +1,4 @@
-import _ from "lodash"
+import { sortBy, groupBy, filter } from "lodash"
 import { matchSorter } from "match-sorter"
 import { formatDateToPost } from "when_you_free"
 
@@ -16,7 +16,7 @@ export function trimArr(arr) {
         for (const [key, value] of Object.entries(arr[i])) {
             //   console.debug(`${key}: ${value}`);
             if (typeof value === "string") {
-                let trimmed = _.trim(value);
+                let trimmed = value.trim()
                 arr[i][key] = trimmed;
             }
         }
@@ -99,7 +99,7 @@ export function sortAsc(array, property, type) {
             array[i][property] = formatDateToPost(array[i][property])
         }
     }
-    let result = _.sortBy(array, [property])
+    let result = sortBy(array, [property])
     return trimArr(result);
 }
 /**
@@ -125,7 +125,7 @@ export function sortDesc(array, property, type) {
             array[i][property] = formatDateToPost(array[i][property])
         }
     }
-    let result = _.sortBy(array, [property])
+    let result = sortBy(array, [property])
     return trimArr(result.reverse())
 }
 /**
@@ -201,8 +201,8 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 * @returns {array}
 */
 export function filterAndSort(data, object, sortValue, sortType, asc = true, limit = undefined) {
-    let result = _.filter(data, object);
-    let sorted = _.sortBy(result, [sortValue])
+    let result = filter(data, object);
+    let sorted = sortBy(result, [sortValue])
     if (asc === false) {
         sorted = sortDesc(sorted, sortValue, sortType)
     } else {
@@ -233,6 +233,6 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 * @returns {array}
 */
 export function group(data, groupByCondition) {
-    let grouped = _.groupBy(data, groupByCondition)
+    let grouped = groupBy(data, groupByCondition)
     return trimArr(grouped)
 }
