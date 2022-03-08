@@ -1,2 +1,3 @@
-const { arrz } = require("./dist/index.js")
-module.exports = { arrz }
+const array_helperz = require("./dist/index.js")
+
+  module.exports = { array_helperz }

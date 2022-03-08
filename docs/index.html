@@ -97,7 +97,7 @@
   <body>
 
     <nav class="navbar" id="navbar">
-      <h2><a href="index.html"><br/><a href='https://github.com/zen-out' target='_blank' style='margin: 1rem;'>zen-out</a><br/></a></h2><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" alt="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><div class="accordion collapsed" id="4307602" > <h3 class="accordion-heading">Classes<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id=""><a href="ArrayOfObjectsHelper_ArrayOfObjectsHelper.html">ArrayOfObjectsHelper</a></li></ul> </div><ul><li class="menu-li"><a href='http://zen-out.github.io/packages' class=' menu-link' id='' target='_blank'>zen-out packages</a></li><li class="menu-li"><a href='https://www.npmjs.com/package/array_helperz' class=' menu-link' id='' target='_blank'>see npm package</a></li><li class="menu-li"><a href='https://www.npmjs.com/package/array_helperz' class=' menu-link' id='' target='_blank'>see npm package</a></li></ul>
+      <h2><a href="index.html"><br/><a href='https://github.com/zen-out' target='_blank' style='margin: 1rem;'>zen-out</a><br/></a></h2><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" alt="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><div class="accordion collapsed" id="3882018" > <h3 class="accordion-heading">Classes<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion-list" id=""><a href="ArrayOfObjectsHelper_ArrayOfObjectsHelper.html">ArrayOfObjectsHelper</a></li></ul> </div><ul><li class="menu-li"><a href='https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png' class=' menu-link' id='' target='_blank'>visual instructions</a></li><li class="menu-li"><a href='https://www.npmjs.com/package/array_helperz' class=' menu-link' id='' target='_blank'>see npm package</a></li></ul>
       
 
     </nav>
@@ -128,6 +128,45 @@
 
     
 
+
+    <section class="readme">
+        <article><pre class="prettyprint source lang-js"><code>const { arrz } = require(&quot;array_helperz&quot;)
+
+let sampleInput = [{
+    seconds: 500,
+    created: new Date(2020, 12, 1),
+    status: &quot;to do&quot;,
+    problem: &quot;we actually solve our problems best by looking at how other people solved them - segment each feature&quot;,
+}, { seconds: 1000, created: new Date(2019, 12, 1), status: &quot;doing&quot;, problem: &quot;we need to focus on one thing at a time&quot; }]
+
+
+let contains = arrz.contains(sampleInput, &quot;seconds&quot;, 500)
+console.log(&quot;🚀 ~ file: index.js ~ line 12 ~ contains&quot;, contains)
+let doesNotContain = arrz.doesNotContain(sampleInput, &quot;seconds&quot;, 500)
+console.log(&quot;🚀 ~ file: index.js ~ line 14 ~ doesNotContain&quot;, doesNotContain)
+let count = arrz.countByCondition(sampleInput, &quot;status&quot;, &quot;to do&quot;)
+console.log(&quot;🚀 ~ file: index.js ~ line 16 ~ count&quot;, count)
+let filter = arrz.filterValues(sampleInput, &quot;segment&quot;, [&quot;problem&quot;])
+console.log(&quot;🚀 ~ file: index.js ~ line 18 ~ filter&quot;, filter)
+let sortDesc = arrz.sortDesc(sampleInput, &quot;seconds&quot;, &quot;integer&quot;)
+console.log(&quot;🚀 ~ file: index.js ~ line 20 ~ sortDesc&quot;, sortDesc)
+let sortAsc = arrz.sortAsc(sampleInput, &quot;seconds&quot;, &quot;integer&quot;)
+console.log(&quot;🚀 ~ file: index.js ~ line 22 ~ sortAsc&quot;, sortAsc)
+let grouped = arrz.group(sampleInput, &quot;status&quot;)
+console.log(&quot;🚀 ~ file: index.js ~ line 23 ~ grouped&quot;, grouped)
+</code></pre>
+<h1>array_helperz</h1>
+<p><a href="https://zen-out.github.io/packages/array_helperz">array_helperz - start here</a></p>
+<p><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+<img src="https://img.shields.io/npm/dw/array_helperz" alt="NPM Downloads"></p>
+<h2>Instructions:</h2>
+<p><code>npm install array_helperz </code>
+<code> const array_helperz =  require('array_helperz')</code></p>
+<h2>If utilizing in html...:</h2>
+<p><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/array_helperz/dist/index.js&quot;&gt;&lt;/script&gt; </code>
+<code> const output =  array_helperz.method(parameter)</code>
+<a href="https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png"><img src="https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png" alt="here"></a></p></article>
+    </section>
 
 
 

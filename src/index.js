@@ -46,7 +46,6 @@ plan: "test better, when you develop, i think it would also be great actually to
 }, { status: "doing", problem: "we need to focus on one thing at a time", whatshouldbe: "we should be able to do that easily", whatactuallyis: "its quite difficult", hypothesis: "develop modules", plan: "make things very clear and simple" }]
 let output = arrz.countByCondition(sampleInput, "status", "to do")
 console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
-
 * @author zen-out
 * @date 2022-02-17
 * @param {any} array
@@ -76,7 +75,6 @@ plan: "test better, when you develop, i think it would also be great actually to
 }, { status: "doing", problem: "we need to focus on one thing at a time", whatshouldbe: "we should be able to do that easily", whatactuallyis: "its quite difficult", hypothesis: "develop modules", plan: "make things very clear and simple" }]
 let output = arrz.filterValues(sampleInput, "segment", ["problem"])
 console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
-
 * @author zen-out
 * @date 2022-02-17
 * @param {array} array
@@ -98,8 +96,6 @@ problem: "we actually solve our problems best by looking at how other people sol
 }, { created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
 let output = arrz.sortAsc(sampleInput, "created", "date")
 console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
-
-* 
 * @author zen-out
 * @date 2022-02-17
 * @param {array} array
@@ -126,7 +122,6 @@ problem: "we actually solve our problems best by looking at how other people sol
 }, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
 let output = arrz.sortDesc(sampleInput, "seconds", "integer")
 console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
-
 * @author zen-out
 * @date 2022-02-17
 * @param {array} array
@@ -203,7 +198,6 @@ problem: "we actually solve our problems best by looking at how other people sol
 }, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
 let output = arrz.filterAndSort(sampleInput, { status: "to do" }, "seconds", "number", true, 4)
 console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
-
 * @date 2022-02-17
 * @param {any} data
 * @param {any} object
@@ -239,7 +233,6 @@ problem: "we actually solve our problems best by looking at how other people sol
 }, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
 let output = arrz.group(sampleInput, "status")
 console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
-
 * @author zen-out
 * @date 2022-03-06
 * @param {any} data
