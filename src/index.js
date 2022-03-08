@@ -1,39 +1,29 @@
 import _ from "lodash"
 import { matchSorter } from "match-sorter"
 import { formatDateToPost } from "when_you_free"
-export class ArrayOfObjectsHelper {
-    /**
-     * new arrz = new ArrayOfObjectsHelper
-     * @author zen-out
-     * @date 2022-03-06
-     * @returns {class}
-     */
-    constructor() {
 
-    }
-
-    /**
-     * trimArr(arr)
-     * @description trims array values
-     * @author zen-out
-     * @author zen-out
-     * @date 2021-12-19
-     * @param {array} arr
-     * @returns {array}
-     */
-    trimArr(arr) {
-            for (let i = 0; i < arr.length; i++) {
-                for (const [key, value] of Object.entries(arr[i])) {
-                    //   console.debug(`${key}: ${value}`);
-                    if (typeof value === "string") {
-                        let trimmed = _.trim(value);
-                        arr[i][key] = trimmed;
-                    }
-                }
+/**
+ * trimArr(arr)
+ * @description trims array values
+ * @author zen-out
+ * @author zen-out
+ * @date 2021-12-19
+ * @param {array} arr
+ * @returns {array}
+ */
+export function trimArr(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (const [key, value] of Object.entries(arr[i])) {
+            //   console.debug(`${key}: ${value}`);
+            if (typeof value === "string") {
+                let trimmed = _.trim(value);
+                arr[i][key] = trimmed;
             }
-            return arr;
         }
-        /**
+    }
+    return arr;
+}
+/**
 * @example
 * const { arrz } = require("./index.js")
 let sampleInput = [{
@@ -48,21 +38,21 @@ let output = arrz.countByCondition(sampleInput, "status", "to do")
 console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 * @author zen-out
 * @date 2022-02-17
-* @param {any} array
+* @param {array} array
 * @param {string} key
 * @param {string} value
 * @returns {number} of objects that meet that condition
 */
-    countByCondition(array, key, value) {
-            let count = 0;
-            for (let i = 0; i < array.length; i++) {
-                if (array[i][key] === value) {
-                    count++;
-                }
-            }
-            return count;
+export function countByCondition(array, key, value) {
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i][key] === value) {
+            count++;
         }
-        /**
+    }
+    return count;
+}
+/**
 * @example
 const { arrz } = require("./index.js")
 let sampleInput = [{
@@ -78,15 +68,15 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 * @author zen-out
 * @date 2022-02-17
 * @param {array} array
-* @param {any} keyword
-* @param {any} arrOfKeys
+* @param {string} keyword
+* @param {array} arrOfKeys
 * @returns {array} of objects
 */
-    filterValues(array, keyword, arrOfKeys) {
-            let result = matchSorter(array, keyword, { keys: arrOfKeys })
-            return this.trimArr(result);
-        }
-        /**
+export function filterValues(array, keyword, arrOfKeys) {
+    let result = matchSorter(array, keyword, { keys: arrOfKeys })
+    return trimArr(result);
+}
+/**
 * @example
 * const { arrz } = require("./index.js")
 let sampleInput = [{
@@ -99,19 +89,20 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 * @author zen-out
 * @date 2022-02-17
 * @param {array} array
-* @param {any} property
+* @param {string} property
+* @param {string} type (date) - optional
 * @returns {array} of objects
 */
-    sortAsc(array, property, type) {
-            if (type === "date") {
-                for (let i = 0; i < array.length; i++) {
-                    array[i][property] = formatDateToPost(array[i][property])
-                }
-            }
-            let result = _.sortBy(array, [property])
-            return this.trimArr(result);
+export function sortAsc(array, property, type) {
+    if (type === "date") {
+        for (let i = 0; i < array.length; i++) {
+            array[i][property] = formatDateToPost(array[i][property])
         }
-        /**
+    }
+    let result = _.sortBy(array, [property])
+    return trimArr(result);
+}
+/**
 * @example
 * const { arrz } = require("./index.js")
 * let sampleInput = [{
@@ -125,19 +116,19 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 * @author zen-out
 * @date 2022-02-17
 * @param {array} array
-* @param {any} property
+* @param {string} property
 * @returns {array} of objects
 */
-    sortDesc(array, property, type) {
-            if (type === "date") {
-                for (let i = 0; i < array.length; i++) {
-                    array[i][property] = formatDateToPost(array[i][property])
-                }
-            }
-            let result = _.sortBy(array, [property])
-            return this.trimArr(result.reverse())
+export function sortDesc(array, property, type) {
+    if (type === "date") {
+        for (let i = 0; i < array.length; i++) {
+            array[i][property] = formatDateToPost(array[i][property])
         }
-        /**
+    }
+    let result = _.sortBy(array, [property])
+    return trimArr(result.reverse())
+}
+/**
 * @example
 const { arrz } = require("./index.js")
 let sampleInput = [{
@@ -150,19 +141,20 @@ let output = arrz.contains(sampleInput, "seconds", 500)
 * @author zen-out
 * @date 2022-02-17
 * @param {array} array
-* @param {any} property
+* @param {string} property
+* @param {string} value
 * @returns {array} of objects
 */
-    contains(array, property, value) {
-            let result = []
-            for (let i = 0; i < array.length; i++) {
-                if (array[i][property] === value) {
-                    result.push(array[i])
-                }
-            }
-            return this.trimArr(result)
+export function contains(array, property, value) {
+    let result = []
+    for (let i = 0; i < array.length; i++) {
+        if (array[i][property] === value) {
+            result.push(array[i])
         }
-        /**
+    }
+    return trimArr(result)
+}
+/**
 * @example
 const { arrz } = require("./index.js")
 let sampleInput = [{
@@ -175,19 +167,20 @@ let output = arrz.doesNotContain(sampleInput, "seconds", 500)
 * @author zen-out
 * @date 2022-02-17
 * @param {array} array
-* @param {any} property
+* @param {string} property
+* @param {string} value
 * @returns {array} of objects
 */
-    doesNotContain(array, property, value) {
-            let result = []
-            for (let i = 0; i < array.length; i++) {
-                if (array[i][property] !== value) {
-                    result.push(array[i])
-                }
-            }
-            return this.trimArr(result)
+export function doesNotContain(array, property, value) {
+    let result = []
+    for (let i = 0; i < array.length; i++) {
+        if (array[i][property] !== value) {
+            result.push(array[i])
         }
-        /**
+    }
+    return trimArr(result)
+}
+/**
 * @example
 const { arrz } = require("./index.js")
 let sampleInput = [{
@@ -199,30 +192,30 @@ problem: "we actually solve our problems best by looking at how other people sol
 let output = arrz.filterAndSort(sampleInput, { status: "to do" }, "seconds", "number", true, 4)
 console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 * @date 2022-02-17
-* @param {any} data
-* @param {any} object
-* @param {any} sortValue
-* @param {any} sortType
-* @param {any} asc=true
-* @param {any} limit
-* @returns {any}
+* @param {array} data
+* @param {object} object
+* @param {string} sortValue
+* @param {string} sortType
+* @param {boolean} asc=true
+* @param {number} limit
+* @returns {array}
 */
-    filterAndSort(data, object, sortValue, sortType, asc = true, limit = undefined) {
-            let result = _.filter(data, object);
-            let sorted = _.sortBy(result, [sortValue])
-            if (asc === false) {
-                sorted = this.sortDesc(sorted, sortValue, sortType)
-            } else {
-                sorted = this.sortAsc(sorted, sortValue, sortType)
-            }
-            if (limit) {
-                let result = sorted.slice(0, limit)
-                return this.trimArr(result);
-            } else {
-                return this.trimArr(sorted)
-            }
-        }
-        /**
+export function filterAndSort(data, object, sortValue, sortType, asc = true, limit = undefined) {
+    let result = _.filter(data, object);
+    let sorted = _.sortBy(result, [sortValue])
+    if (asc === false) {
+        sorted = sortDesc(sorted, sortValue, sortType)
+    } else {
+        sorted = sortAsc(sorted, sortValue, sortType)
+    }
+    if (limit) {
+        let result = sorted.slice(0, limit)
+        return trimArr(result);
+    } else {
+        return trimArr(sorted)
+    }
+}
+/**
 * * @example
 const { arrz } = require("./index.js")
 let sampleInput = [{
@@ -235,16 +228,11 @@ let output = arrz.group(sampleInput, "status")
 console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 * @author zen-out
 * @date 2022-03-06
-* @param {any} data
-* @param {any}  groupByCondition
-* @returns {any}
+* @param {array} data
+* @param {string}  groupByCondition
+* @returns {array}
 */
-    group(data, groupByCondition) {
-        let grouped = _.groupBy(data, groupByCondition)
-        return this.trimArr(grouped)
-    }
-
-
+export function group(data, groupByCondition) {
+    let grouped = _.groupBy(data, groupByCondition)
+    return trimArr(grouped)
 }
-
-export let arrz = new ArrayOfObjectsHelper()
