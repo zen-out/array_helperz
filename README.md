@@ -2,7 +2,7 @@
 [array_helperz - start here](https://zen-out.github.io/packages/array_helperz)
 [![here](https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png)](https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png)
 ```js
-const { arrz } = require("array_helperz")
+const arrz = require("array_helperz")
 
 let sampleInput = [{
     seconds: 500,
