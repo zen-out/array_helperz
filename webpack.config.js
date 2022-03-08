@@ -13,6 +13,26 @@ module.exports = {
         // to make it available in both browser and node, you have to specify option to this
         globalObject: 'this'
     },
+    externals: {
+        when_you_free: {
+            commonjs: 'when_you_free',
+            commonjs2: 'when_you_free',
+            amd: 'when_you_free',
+            root: 'when_you_free',
+        },
+        lodash: {
+            commonjs: 'lodash',
+            commonjs2: 'lodash',
+            amd: 'lodash',
+            root: 'lodash',
+        },
+        matchSorter: {
+            commonjs: 'match-sorter',
+            commonjs2: 'match-sorter',
+            amd: 'match-sorter',
+            root: 'match-sorter',
+        },
+    },
     module: {
         rules: [{
             // specify whihc files shoulde be loaded
