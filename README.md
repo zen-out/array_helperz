@@ -1,6 +1,7 @@
 # array_helperz
 [array_helperz - start here](https://zen-out.github.io/packages/array_helperz)
-[![here](https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png)](https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png)```js
+[![here](https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png)](https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png)
+```js
 const { arrz } = require("array_helperz")
 
 let sampleInput = [{
@@ -9,8 +10,6 @@ let sampleInput = [{
     status: "to do",
     problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
 }, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
-
-
 let contains = arrz.contains(sampleInput, "seconds", 500)
 console.log("🚀 ~ file: index.js ~ line 12 ~ contains", contains)
 let doesNotContain = arrz.doesNotContain(sampleInput, "seconds", 500)
@@ -33,7 +32,7 @@ console.log("🚀 ~ file: index.js ~ line 23 ~ grouped", grouped)
  ``` const array_helperz =  require('array_helperz')```
 
 ## If utilizing in html...: 
-```<script src="https://cdn.jsdelivr.net/npm/array_helperz/dist/index.js"></script> ``` 
+```<script src="https://cdn.jsdelivr.net/npm/array_helperz@1.1.22/dist/index.js"></script> ``` 
  ``` const output =  array_helperz.method(parameter)```
 
 ## Functions
@@ -82,9 +81,9 @@ trims array values
 **Author**: zen-out  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>array</code> | 
+| Param | Type               |
+|-------|--------------------|
+| arr   | <code>array</code> |
 
 <a name="countByCondition"></a>
 
@@ -94,11 +93,11 @@ trims array values
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| key | <code>string</code> | 
-| value | <code>string</code> | 
+| Param | Type                |
+|-------|---------------------|
+| array | <code>array</code>  |
+| key   | <code>string</code> |
+| value | <code>string</code> |
 
 **Example**  
 ```js
@@ -122,11 +121,11 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| keyword | <code>string</code> | 
-| arrOfKeys | <code>array</code> | 
+| Param     | Type                |
+|-----------|---------------------|
+| array     | <code>array</code>  |
+| keyword   | <code>string</code> |
+| arrOfKeys | <code>array</code>  |
 
 **Example**  
 ```js
@@ -150,11 +149,11 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| array | <code>array</code> |  |
-| property | <code>string</code> |  |
-| type | <code>string</code> | (date) - optional |
+| Param    | Type                | Description       |
+|----------|---------------------|-------------------|
+| array    | <code>array</code>  |                   |
+| property | <code>string</code> |                   |
+| type     | <code>string</code> | (date) - optional |
 
 **Example**  
 ```js
@@ -175,10 +174,10 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>string</code> | 
+| Param    | Type                |
+|----------|---------------------|
+| array    | <code>array</code>  |
+| property | <code>string</code> |
 
 **Example**  
 ```js
@@ -200,11 +199,11 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>string</code> | 
-| value | <code>string</code> | 
+| Param    | Type                |
+|----------|---------------------|
+| array    | <code>array</code>  |
+| property | <code>string</code> |
+| value    | <code>string</code> |
 
 **Example**  
 ```js
@@ -225,11 +224,11 @@ let output = arrz.contains(sampleInput, "seconds", 500)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>string</code> | 
-| value | <code>string</code> | 
+| Param    | Type                |
+|----------|---------------------|
+| array    | <code>array</code>  |
+| property | <code>string</code> |
+| value    | <code>string</code> |
 
 **Example**  
 ```js
@@ -248,14 +247,14 @@ let output = arrz.doesNotContain(sampleInput, "seconds", 500)
 **Kind**: global function  
 **Date**: 2022-02-17  
 
-| Param | Type | Default |
-| --- | --- | --- |
-| data | <code>array</code> |  | 
-| object | <code>object</code> |  | 
-| sortValue | <code>string</code> |  | 
-| sortType | <code>string</code> |  | 
-| asc | <code>boolean</code> | <code>true</code> | 
-| limit | <code>number</code> |  | 
+| Param     | Type                 | Default           |
+|-----------|----------------------|-------------------|
+| data      | <code>array</code>   |                   |
+| object    | <code>object</code>  |                   |
+| sortValue | <code>string</code>  |                   |
+| sortType  | <code>string</code>  |                   |
+| asc       | <code>boolean</code> | <code>true</code> |
+| limit     | <code>number</code>  |                   |
 
 **Example**  
 ```js
@@ -287,7 +286,7 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| data | <code>array</code> | 
+| Param            | Type                |
+|------------------|---------------------|
+| data             | <code>array</code>  |
 | groupByCondition | <code>string</code> |

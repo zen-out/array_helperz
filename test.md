@@ -33,9 +33,9 @@ trims array values
 **Author**: zen-out  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>array</code> | 
+| Param | Type               |
+|-------|--------------------|
+| arr   | <code>array</code> |
 
 <a name="ArrayOfObjectsHelper+countByCondition"></a>
 
@@ -45,11 +45,11 @@ trims array values
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>any</code> | 
-| key | <code>string</code> | 
-| value | <code>string</code> | 
+| Param | Type                |
+|-------|---------------------|
+| array | <code>any</code>    |
+| key   | <code>string</code> |
+| value | <code>string</code> |
 
 **Example**  
 ```js
@@ -73,11 +73,11 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| keyword | <code>any</code> | 
-| arrOfKeys | <code>any</code> | 
+| Param     | Type               |
+|-----------|--------------------|
+| array     | <code>array</code> |
+| keyword   | <code>any</code>   |
+| arrOfKeys | <code>any</code>   |
 
 **Example**  
 ```js
@@ -101,10 +101,10 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>any</code> | 
+| Param    | Type               |
+|----------|--------------------|
+| array    | <code>array</code> |
+| property | <code>any</code>   |
 
 **Example**  
 ```js
@@ -125,10 +125,10 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>any</code> | 
+| Param    | Type               |
+|----------|--------------------|
+| array    | <code>array</code> |
+| property | <code>any</code>   |
 
 **Example**  
 ```js
@@ -150,10 +150,10 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>any</code> | 
+| Param    | Type               |
+|----------|--------------------|
+| array    | <code>array</code> |
+| property | <code>any</code>   |
 
 **Example**  
 ```js
@@ -174,10 +174,10 @@ let output = arrz.contains(sampleInput, "seconds", 500)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>any</code> | 
+| Param    | Type               |
+|----------|--------------------|
+| array    | <code>array</code> |
+| property | <code>any</code>   |
 
 **Example**  
 ```js
@@ -196,14 +196,14 @@ let output = arrz.doesNotContain(sampleInput, "seconds", 500)
 **Kind**: instance method of [<code>ArrayOfObjectsHelper</code>](#ArrayOfObjectsHelper)  
 **Date**: 2022-02-17  
 
-| Param | Type | Default |
-| --- | --- | --- |
-| data | <code>any</code> |  | 
-| object | <code>any</code> |  | 
-| sortValue | <code>any</code> |  | 
-| sortType | <code>any</code> |  | 
-| asc | <code>any</code> | <code>true</code> | 
-| limit | <code>any</code> |  | 
+| Param     | Type             | Default           |
+|-----------|------------------|-------------------|
+| data      | <code>any</code> |                   |
+| object    | <code>any</code> |                   |
+| sortValue | <code>any</code> |                   |
+| sortType  | <code>any</code> |                   |
+| asc       | <code>any</code> | <code>true</code> |
+| limit     | <code>any</code> |                   |
 
 **Example**  
 ```js
@@ -235,7 +235,7 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| data | <code>any</code> | 
+| Param            | Type             |
+|------------------|------------------|
+| data             | <code>any</code> |
 | groupByCondition | <code>any</code> |
