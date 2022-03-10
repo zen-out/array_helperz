@@ -1,3 +1,3 @@
 const array_helperz = require("./dist/index.js")
 
-module.exports = { array_helperz }
+module.exports = array_helperz

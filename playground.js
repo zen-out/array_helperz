@@ -1,4 +1,4 @@
-const arrz = require("./dist/index.js")
+const arrz = require("./index.js")
 let sampleInput = [{
     seconds: 500,
     created: new Date(2020, 12, 1),
