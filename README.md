@@ -1,6 +1,6 @@
 # array_helperz
 [array_helperz - start here](https://zen-out.github.io/packages/array_helperz)
-[![here](https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png)](https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png)
+[![here](https://github.com/zen-out/zen-out.github.io/blob/master/assets/images/array_helperz.png)](https://github.com/zen-out/zen-out.github.io/blob/master/assets/images/array_helperz.png)
 ```js
 const arrz = require("array_helperz")
 
@@ -32,7 +32,7 @@ console.log("🚀 ~ file: index.js ~ line 23 ~ grouped", grouped)
  ``` const array_helperz =  require('array_helperz')```
 
 ## If utilizing in html...: 
-```<script src="https://cdn.jsdelivr.net/npm/array_helperz@1.1.22/dist/index.js"></script> ``` 
+```<script src="./node_modules/array_helperz/index.js"></script> ``` 
  ``` const output =  array_helperz.method(parameter)```
 
 ## Functions
