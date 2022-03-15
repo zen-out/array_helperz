@@ -1,86 +1,55 @@
 const arrz = require("./index.js")
-let sampleInput = [{
-    seconds: 500,
-    created: new Date(2020, 12, 1),
-    status: "to do",
-    problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
-}, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
+let arrOne = [{
+        title: 'I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.',
+        status: 'to do',
+        id: 1
+    },
+    {
+        title: 'Because we loved each other too much and found each other too interesting. And I love that about humanity,  and in fact it’s the very reason I root for us to survive—because we are so stupid about each other.',
+        status: 'doing',
+        id: 2
+    },
+    {
+        title: 'But a life without art,  without wonder,  without beautiful things—she would go mad. She has gone mad. What she needs are stories. Stories are a way to preserve one’s self. To be remembered. And to forget.',
+        status: 'doing',
+        id: 3
+    }
+]
+let arrTwo = [
+    { name: 'Whatever', status: 'doing', problem_id: 2, id: 1 },
+    { name: 'is', status: 'doing', problem_id: 2, id: 2 },
+    { name: 'people', status: 'to do', problem_id: 2, id: 3 }
+]
 
-let sampleInput2 = [{
-    seconds: 500,
-    created: new Date(2020, 12, 1),
-    status: "to do",
-    problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
-}, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
+let output = arrz.group(arrTwo, "status")
+console.log("🚀 ~ file: playground.js ~ line 25 ~ output", output)
+let problem2 = arrz.filterAndSort(arrOne, "to do", ["status", "title"], "id", true, 2)
+console.log("🚀 ~ file: playground.js ~ line 27 ~ problem2", problem2)
+let counts = arrz.countByCondition(arrOne, "status", "to do")
+console.log("🚀 ~ file: playground.js ~ line 29 ~ counts", counts)
+let getSorted = arrz.filterAndSort(arrOne, "choices", ["title"], "id")
+console.log("🚀 ~ file: playground.js ~ line 31 ~ getSorted", getSorted)
+let found = arrz.filterValues(arrOne, "choices", ["title"])
+console.log("🚀 ~ file: playground.js ~ line 33 ~ found", found)
+let sorted = arrz.sortAsc(arrOne, "title")
+console.log("🚀 ~ file: playground.js ~ line 35 ~ sorted", sorted)
+let sortedDesc = arrz.sortDesc(arrOne, "title")
+console.log("🚀 ~ file: playground.js ~ line 37 ~ sortedDesc", sortedDesc)
+let doesNotContain2 = arrz.doesNotContain(arrOne, "choices")
+console.log("🚀 ~ file: playground.js ~ line 39 ~ doesNotContain2", doesNotContain2)
 
-
-let output = arrz.group(sampleInput, "status")
-console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
-
-// // function ARRINCLUDE
-// let problem2 = arrz.filterAndSort(input, "high", ["importance", "usefulness"], "created", true, 2)
-//     // console.log(problem2)
-
-// function getFilterAndSortObject() {
-//     let filtered = arrz.filterAndSortObject(problem, "created", true, 10)
-//     console.log(filtered)
-//     return filtered;
-// }
-// getFilterAndSortObject()
-//     // let parentAnArray = arrz.parentAnArray(problem, task, "problem", "task")
-//     // console.log(parentAnArray)
-
-
-
-// let counts = arrz.countByCondition(problem, "status", "done")
-// HAS(counts, 1)
-// console.log(counts)
-
-// let grouped = arrz.groupAndSort(problem, "status", {
-// "status": ["to do", "doing", "done"],
-// "difficulty": ["easy", "medium", "difficult"]
-// })
-// console.log(grouped)
-
-
-// let shouldBeTodo = grouped[0]["status"]
-// HAS(shouldBeTodo, "to do")
-// console.log("🚀 ~ file: playground.js ~ line 168 ~ shouldBeTodo", shouldBeTodo)
-// let shouldBeDone = grouped[grouped.length - 1]["status"]
-// HAS(shouldBeDone, "done")
-
-// let getSorted = arrz.filterAndSort(problem, "mustafa", ["problem"], "created")
-// returns problems that are sorted and
-// console.log(getSorted.length)
-// let getSorted1 = getSorted[0].seconds
-// console.log("🚀 ~ file: playground.js ~ line 145 ~ getSorted1", getSorted1)
-
-// let getSorted2 = getSorted[1].seconds
-// console.log("🚀 ~ file: playground.js ~ line 148 ~ getSorted2", getSorted2)
-
-// let getSorted3 = getSorted[2].seconds
-// console.log("🚀 ~ file: playground.js ~ line 151 ~ getSorted3", getSorted3)
-
-
-// let found = arrz.filterValues(problem, "mustafa", ["problem"])
-// console.log(found)
-// HAS(found, importance: 'high', difficulty: 'easy', email: 'ryanyiu@bu.edu')
-
-// let sorted = arrz.sortAsc(problem, "problem")
-// console.log(sorted[0]["problem"])
-// console.log(sorted[1]["problem"])
-// console.log(sorted[2]["problem"])
-
-
-// let sortedDesc = arrz.sortDesc(problem, "problem")
-// console.log(sortedDesc[0]["problem"])
-// console.log(sortedDesc[1]["problem"])
-// console.log(sortedDesc[2]["problem"])
-
-// let doesNotContain2 = arrz.doesNotContain(problem, "whatsup")
-// let length = doesNotContain2.length
-// console.log("🚀 ~ file: playground.js ~ line 152 ~ length", length)
-// IS(length, 3)
-
-
-// trim arr
+let arr1Child = { data: arrOne, key: "id" }
+let arr2 = {
+    data: arrTwo,
+    key: "problem_id",
+    value: 2
+}
+let merged = arrz.mergeByKeys(arrOne, arr2)
+console.log("🚀 ~ file: playground.js ~ line 48 ~ merged", merged)
+let arr2Child = { data: arrTwo, key: "problem_id" }
+let result = arrz.makeChildOfAnother(arr1Child, arr2Child)
+let arr1GetOne = { data: arrOne, key: "id", value: 2 }
+console.log("🚀 ~ file: playground.js ~ line 52 ~ result", result)
+let arr2GetOne = { data: arrTwo, key: "problem_id", value: 2 }
+let result2 = arrz.getOneMakeChildOfAnother(arr1GetOne, arr2GetOne)
+console.log("🚀 ~ file: playground.js ~ line 54 ~ result2", result2)
