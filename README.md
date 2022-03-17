@@ -1,23 +1,7 @@
 # array_helperz
-[array_helperz - start here](https://zen-out.github.io/packages/array_helperz)
-[![here](https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png)](https://github.com/zen-out/zen-out.github.io/blob/master/packages/videos/array_helperz.png)
-
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![NPM Downloads](https://img.shields.io/npm/dw/array_helperz)
-
-## Instructions: 
-```npm install array_helperz ``` 
- ``` const array_helperz =  require('array_helperz')```
-
-## If utilizing in html...: 
-```<script src="./node_modules/array_helperz/index.js"></script> ``` 
- ``` const output =  array_helperz.method(parameter)```
-
-
-
+[![here](https://github.com/zen-out/zen-out.github.io/blob/master/assets/images/array_helperz.png)](https://github.com/zen-out/zen-out.github.io/blob/master/assets/images/array_helperz.png)
 ```js
-const { arrz } = require("array_helperz")
+const arrz = require("array_helperz")
 
 let sampleInput = [{
     seconds: 500,
@@ -41,6 +25,10 @@ let sortAsc = arrz.sortAsc(sampleInput, "seconds", "integer")
 console.log("🚀 ~ file: index.js ~ line 22 ~ sortAsc", sortAsc)
 let grouped = arrz.group(sampleInput, "status")
 console.log("🚀 ~ file: index.js ~ line 23 ~ grouped", grouped)
+    let func = arrz.filterWithFuncObjectOrString(arrTwo, getToDoFunction)
+    let obj = arrz.filterWithFuncObjectOrString(arrTwo, { status: "to do" })
+    let keyValue = arrz.filterWithFuncObjectOrString(arrTwo, "status", "to do")
+    let key = arrz.filterWithFuncObjectOrString(arrTwo, "status")
 let arrOne = [{
         title: 'I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.',
         status: 'to do',
@@ -79,9 +67,19 @@ let arr2GetOne = { data: arrTwo, key: "problem_id", value: 2 }
 let result2 = arrz.getOneMakeChildOfAnother(arr1GetOne, arr2GetOne)
 console.log("🚀 ~ file: playground.js ~ line 54 ~ result2", result2)
 ```
+## Instructions: 
+```npm install array_helperz ``` 
+ ``` const arrz =  require('array_helperz')```
+
+## If utilizing in html...: 
+```<script src="./node_modules/array_helperz/dist/index.js"></script> ``` 
+ ``` const output =  array_helperz.method(parameter)```
+
 ## Functions
 
 <dl>
+<dt><a href="#filterWithFuncObjectOrString">filterWithFuncObjectOrString(array, object, value)</a> ⇒ <code>any</code></dt>
+<dd></dd>
 <dt><a href="#trimArr">trimArr(arr)</a> ⇒ <code>array</code></dt>
 <dd><p>trims array values</p>
 </dd>
@@ -124,6 +122,36 @@ console.log(&quot;🚀 ~ file: playground.js ~ line 9 ~ output&quot;, output)</l
 </dd>
 </dl>
 
+<a name="filterWithFuncObjectOrString"></a>
+
+## filterWithFuncObjectOrString(array, object, value) ⇒ <code>any</code>
+**Kind**: global function  
+**Date**: 2022-03-17  
+**Author**: zen-out  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>any</code> |  |
+| object | <code>any</code> |  |
+| value | <code>any</code> | = undefined |
+
+**Example**  
+```js
+let arrTwo = [
+        { name: 'Because we loved each other too much and found each other too interesting. And I love that about humanity,  and in fact it’s the very reason I root for us to survive—because we are so stupid about each other.', status: 'doing', problem_id: 2, id: 1 },
+        { name: 'I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.', status: 'doing', problem_id: 2, id: 2 },
+        { name: 'But a life without art,  without wonder,  without beautiful things—she would go mad. She has gone mad. What she needs are stories. Stories are a way to preserve one’s self. To be remembered. And to forget.', status: 'to do', problem_id: 2, id: 3 }
+    ]
+    function getToDo(object) {
+        if (object.status === "to do") {
+            return object;
+        }
+    }
+    let func = filterWithFuncObjectOrString(arrTwo, getToDo)
+    let obj = filterWithFuncObjectOrString(arrTwo, { status: "to do" })
+    let keyValue = filterWithFuncObjectOrString(arrTwo, "status", "to do")
+    let key = filterWithFuncObjectOrString(arrTwo, "status")
+```
 <a name="trimArr"></a>
 
 ## trimArr(arr) ⇒ <code>array</code>

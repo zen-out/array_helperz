@@ -52,4 +52,19 @@ let arr1GetOne = { data: arrOne, key: "id", value: 2 }
 console.log("🚀 ~ file: playground.js ~ line 52 ~ result", result)
 let arr2GetOne = { data: arrTwo, key: "problem_id", value: 2 }
 let result2 = arrz.getOneMakeChildOfAnother(arr1GetOne, arr2GetOne)
+
+function getToDoFunction(object) {
+    if (object.status === "to do") {
+        return object;
+    }
+}
 console.log("🚀 ~ file: playground.js ~ line 54 ~ result2", result2)
+let func = arrz.filterWithFuncObjectOrString(arrTwo, getToDoFunction)
+console.log("🚀 ~ file: playground.js ~ line 57 ~ func", func)
+let obj = arrz.filterWithFuncObjectOrString(arrTwo, { status: "to do" })
+console.log("🚀 ~ file: playground.js ~ line 59 ~ obj", obj)
+let keyValue = arrz.filterWithFuncObjectOrString(arrTwo, "status", "to do")
+console.log("🚀 ~ file: playground.js ~ line 61 ~ keyValue", keyValue)
+let key = arrz.filterWithFuncObjectOrString(arrTwo, "status")
+
+console.log("🚀 ~ file: playground.js ~ line 62 ~ key", key)
