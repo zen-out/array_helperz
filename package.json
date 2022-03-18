@@ -21,7 +21,6 @@
     "author": "zen-out",
     "license": "MIT",
     "dependencies": {
-        "@smakss/search": "^1.2.2",
         "lodash": "^4.17.21",
         "match-sorter": "^6.3.1"
     },
