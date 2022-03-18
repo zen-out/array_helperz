@@ -68,3 +68,5 @@ console.log("🚀 ~ file: playground.js ~ line 61 ~ keyValue", keyValue)
 let key = arrz.filterWithFuncObjectOrString(arrTwo, "status")
 
 console.log("🚀 ~ file: playground.js ~ line 62 ~ key", key)
+let test = arrz.getUnique(arrTwo, "status")
+console.log(test)

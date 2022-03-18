@@ -1,5 +1,4 @@
 # array_helperz
-[![here](https://github.com/zen-out/zen-out.github.io/blob/master/assets/images/array_helperz.png)](https://github.com/zen-out/zen-out.github.io/blob/master/assets/images/array_helperz.png)
 ```js
 const arrz = require("array_helperz")
 
@@ -66,13 +65,30 @@ console.log("🚀 ~ file: playground.js ~ line 52 ~ result", result)
 let arr2GetOne = { data: arrTwo, key: "problem_id", value: 2 }
 let result2 = arrz.getOneMakeChildOfAnother(arr1GetOne, arr2GetOne)
 console.log("🚀 ~ file: playground.js ~ line 54 ~ result2", result2)
+let testArr = [{
+        id: 1,
+        hello: "whatsup"
+    },
+    {
+        id: 2,
+        hello: "whatsup"
+    },
+    {
+        id: 1,
+        hello: "whatsup"
+    },
+]
+// second parameter is the key 
+    let newArr = getUnique(testArr, "id")
 ```
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![NPM Downloads](https://img.shields.io/npm/dw/array_helperz)
 ## Instructions: 
 ```npm install array_helperz ``` 
- ``` const arrz =  require('array_helperz')```
+ ``` const array_helperz =  require('array_helperz')```
 
 ## If utilizing in html...: 
-```<script src="./node_modules/array_helperz/dist/index.js"></script> ``` 
+```<script src="./node_modules/array_helperz/index.js"></script> ``` 
  ``` const output =  array_helperz.method(parameter)```
 
 ## Functions
@@ -100,7 +116,7 @@ console.log("🚀 ~ file: playground.js ~ line 54 ~ result2", result2)
 <dt><a href="#group">group(data, groupByCondition)</a> ⇒ <code>array</code></dt>
 <dd><ul>
 <li>@example
-const { arrz } = require(&quot;./index.js&quot;)
+const arrz = require(&quot;./index.js&quot;)
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -111,6 +127,8 @@ let output = arrz.group(sampleInput, &quot;status&quot;)
 console.log(&quot;🚀 ~ file: playground.js ~ line 9 ~ output&quot;, output)</li>
 </ul>
 </dd>
+<dt><a href="#getUnique">getUnique(arr, key)</a> ⇒ <code>any</code></dt>
+<dd></dd>
 <dt><a href="#mergeByKeys">mergeByKeys(arr, object)</a> ⇒ <code>any</code></dt>
 <dd></dd>
 <dt><a href="#makeChildOfAnother">makeChildOfAnother(arr, arr2)</a> ⇒ <code>any</code></dt>
@@ -129,11 +147,11 @@ console.log(&quot;🚀 ~ file: playground.js ~ line 9 ~ output&quot;, output)</l
 **Date**: 2022-03-17  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| array | <code>any</code> |  |
-| object | <code>any</code> |  |
-| value | <code>any</code> | = undefined |
+| Param  | Type             | Description |
+|--------|------------------|-------------|
+| array  | <code>any</code> |             |
+| object | <code>any</code> |             |
+| value  | <code>any</code> | = undefined |
 
 **Example**  
 ```js
@@ -162,9 +180,9 @@ trims array values
 **Author**: zen-out  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>array</code> | 
+| Param | Type               |
+|-------|--------------------|
+| arr   | <code>array</code> |
 
 <a name="countByCondition"></a>
 
@@ -174,15 +192,15 @@ trims array values
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| key | <code>string</code> | 
-| value | <code>string</code> | 
+| Param | Type                |
+|-------|---------------------|
+| array | <code>array</code>  |
+| key   | <code>string</code> |
+| value | <code>string</code> |
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const arrz = require("./index.js")
 let sampleInput = [{
 status: "to do",
 problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
@@ -202,15 +220,15 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| keyword | <code>string</code> | 
-| arrOfKeys | <code>array</code> | 
+| Param     | Type                |
+|-----------|---------------------|
+| array     | <code>array</code>  |
+| keyword   | <code>string</code> |
+| arrOfKeys | <code>array</code>  |
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const arrz = require("./index.js")
 let sampleInput = [{
 status: "to do",
 problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
@@ -230,15 +248,15 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| array | <code>array</code> |  |
-| property | <code>string</code> |  |
-| type | <code>string</code> | (date) - optional |
+| Param    | Type                | Description       |
+|----------|---------------------|-------------------|
+| array    | <code>array</code>  |                   |
+| property | <code>string</code> |                   |
+| type     | <code>string</code> | (date) - optional |
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const arrz = require("./index.js")
 let sampleInput = [{
 created: new Date(2020, 12, 1),
 status: "to do",
@@ -255,14 +273,14 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>string</code> | 
+| Param    | Type                |
+|----------|---------------------|
+| array    | <code>array</code>  |
+| property | <code>string</code> |
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const arrz = require("./index.js")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -280,15 +298,15 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>string</code> | 
-| value | <code>string</code> | 
+| Param    | Type                |
+|----------|---------------------|
+| array    | <code>array</code>  |
+| property | <code>string</code> |
+| value    | <code>string</code> |
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const arrz = require("./index.js")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -305,15 +323,15 @@ let output = arrz.contains(sampleInput, "seconds", 500)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>string</code> | 
-| value | <code>string</code> | 
+| Param    | Type                |
+|----------|---------------------|
+| array    | <code>array</code>  |
+| property | <code>string</code> |
+| value    | <code>string</code> |
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const arrz = require("./index.js")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -328,18 +346,18 @@ let output = arrz.doesNotContain(sampleInput, "seconds", 500)
 **Kind**: global function  
 **Date**: 2022-02-17  
 
-| Param | Type | Default |
-| --- | --- | --- |
-| data | <code>array</code> |  | 
-| object | <code>object</code> |  | 
-| sortValue | <code>string</code> |  | 
-| sortType | <code>string</code> |  | 
-| asc | <code>boolean</code> | <code>true</code> | 
-| limit | <code>number</code> |  | 
+| Param     | Type                 | Default           |
+|-----------|----------------------|-------------------|
+| data      | <code>array</code>   |                   |
+| object    | <code>object</code>  |                   |
+| sortValue | <code>string</code>  |                   |
+| sortType  | <code>string</code>  |                   |
+| asc       | <code>boolean</code> | <code>true</code> |
+| limit     | <code>number</code>  |                   |
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const arrz = require("./index.js")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -353,7 +371,7 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 
 ## group(data, groupByCondition) ⇒ <code>array</code>
 * @example
-const { arrz } = require("./index.js")
+const arrz = require("./index.js")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -367,11 +385,44 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| data | <code>array</code> | 
-| groupByCondition | <code>string</code> | 
+| Param            | Type                |
+|------------------|---------------------|
+| data             | <code>array</code>  |
+| groupByCondition | <code>string</code> |
 
+<a name="getUnique"></a>
+
+## getUnique(arr, key) ⇒ <code>any</code>
+**Kind**: global function  
+**Date**: 2022-03-18  
+**Author**: zen-out  
+
+| Param | Type             |
+|-------|------------------|
+| arr   | <code>any</code> |
+| key   | <code>any</code> |
+
+**Example**  
+```js
+let testArr = [{
+        id: 1,
+        hello: "whatsup"
+    },
+    {
+        id: 2,
+        hello: "whatsup"
+    },
+    {
+        id: 1,
+        hello: "whatsup"
+    },
+]
+
+export function testUnique() {
+    let newArr = getUnique(testArr, "id")
+    console.log(newArr)
+}
+```
 <a name="mergeByKeys"></a>
 
 ## mergeByKeys(arr, object) ⇒ <code>any</code>
@@ -379,9 +430,9 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| arr | <code>any</code> |  |
+| Param  | Type                | Description                                                                  |
+|--------|---------------------|------------------------------------------------------------------------------|
+| arr    | <code>any</code>    |                                                                              |
 | object | <code>object</code> | {data: arr, key: "problem_id", value: 32} -> reference to the joining to arr |
 
 **Example**  
@@ -445,10 +496,10 @@ let arrOne = [{
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>any</code> | 
-| arr2 | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| arr   | <code>any</code> |
+| arr2  | <code>any</code> |
 
 **Example**  
 ```js
@@ -506,10 +557,10 @@ output
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>any</code> | 
-| arr2 | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| arr   | <code>any</code> |
+| arr2  | <code>any</code> |
 
 **Example**  
 ```js
