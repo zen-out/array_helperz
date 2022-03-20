@@ -53,8 +53,7 @@ let arrTwo = [
 let arr1Child = { data: arrOne, key: "id" }
 let arr2 = {
     data: arrTwo,
-    key: "problem_id",
-    value: 2
+    key: "id",
 }
 let merged = arrz.mergeByKeys(arrOne, arr2)
 console.log("🚀 ~ file: playground.js ~ line 48 ~ merged", merged)
@@ -430,10 +429,10 @@ export function testUnique() {
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param  | Type                | Description                                                                  |
-|--------|---------------------|------------------------------------------------------------------------------|
-| arr    | <code>any</code>    |                                                                              |
-| object | <code>object</code> | {data: arr, key: "problem_id", value: 32} -> reference to the joining to arr |
+| Param  | Type                | Description                                                |
+|--------|---------------------|------------------------------------------------------------|
+| arr    | <code>any</code>    |                                                            |
+| object | <code>object</code> | {data: arr, key: "id",} -> reference to the joining to arr |
 
 **Example**  
 ```js
@@ -458,13 +457,16 @@ let arrOne = [{
         { name: 'is', status: 'doing', problem_id: 2, id: 2 },
         { name: 'people', status: 'to do', problem_id: 2, id: 3 }
     ]
+    let arr1 = {
+        data: arrOne, 
+        key: "id
+    }
     let arr2 = {
         data: arrTwo,
-        key: "problem_id",
-        value: 2
+        key: "id",
     }
 
-    let merged = mergeByKeys(arrOne, arr2)
+    let merged = mergeByKeys(arr1, arr2)
     // output [
   {
     title: 'I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.',
