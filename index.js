@@ -9,92 +9,104 @@
 
         function o(e) { var n = r[e]; if (void 0 !== n) return n.exports; var a = r[e] = { exports: {} }; return t[e](a, a.exports, o), a.exports }
         o.n = e => { var t = e && e.__esModule ? () => e.default : () => e; return o.d(t, { a: t }), t }, o.d = (e, t) => { for (var r in t) o.o(t, r) && !o.o(e, r) && Object.defineProperty(e, r, { enumerable: !0, get: t[r] }) }, o.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), o.r = e => { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }; var n = {}; return (() => { "use strict";
-            o.r(n), o.d(n, { contains: () => y, countByCondition: () => s, doesNotContain: () => p, filterAndSort: () => m, filterValues: () => c, filterWithFuncObjectOrString: () => U, getOneMakeChildOfAnother: () => S, getUnique: () => B, group: () => b, makeChildOfAnother: () => I, makeChildOfAnotherTest: () => j, mergeByKeys: () => O, search: () => l, sortAsc: () => d, sortDesc: () => h, testFilterWithFuncStringObject: () => k, testMergeByKeys: () => A, testUnique: () => C, trimArr: () => u }); var e = o(356);
+            o.r(n), o.d(n, { contains: () => p, countByCondition: () => l, doesNotContain: () => b, filterAndSort: () => m, filterValues: () => d, filterWithFuncObjectOrString: () => U, getOneMakeChildOfAnother: () => j, getUnique: () => P, group: () => v, makeChildOfAnother: () => I, makeChildOfAnotherTest: () => E, mergeByKeys: () => A, search: () => f, sortAsc: () => y, sortDesc: () => h, testFilterWithFuncStringObject: () => x, testMergeByKeys: () => S, testUnique: () => T, trimArr: () => s }); var e = o(356);
             o(826);
 
-            function t(e) { return function(e) { if (Array.isArray(e)) return i(e) }(e) || function(e) { if ("undefined" != typeof Symbol && null != e[Symbol.iterator] || null != e["@@iterator"]) return Array.from(e) }(e) || a(e) || function() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.") }() }
+            function t(e) { return t = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) { return typeof e } : function(e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }, t(e) }
 
-            function r(e, t) { return function(e) { if (Array.isArray(e)) return e }(e) || function(e, t) { var r = null == e ? null : "undefined" != typeof Symbol && e[Symbol.iterator] || e["@@iterator"]; if (null != r) { var o, n, a = [],
+            function r(e) { return function(e) { if (Array.isArray(e)) return u(e) }(e) || function(e) { if ("undefined" != typeof Symbol && null != e[Symbol.iterator] || null != e["@@iterator"]) return Array.from(e) }(e) || i(e) || function() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.") }() }
+
+            function a(e, t) { return function(e) { if (Array.isArray(e)) return e }(e) || function(e, t) { var r = null == e ? null : "undefined" != typeof Symbol && e[Symbol.iterator] || e["@@iterator"]; if (null != r) { var o, n, a = [],
                             i = !0,
-                            u = !1; try { for (r = r.call(e); !(i = (o = r.next()).done) && (a.push(o.value), !t || a.length !== t); i = !0); } catch (e) { u = !0, n = e } finally { try { i || null == r.return || r.return() } finally { if (u) throw n } } return a } }(e, t) || a(e, t) || function() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.") }() }
+                            u = !1; try { for (r = r.call(e); !(i = (o = r.next()).done) && (a.push(o.value), !t || a.length !== t); i = !0); } catch (e) { u = !0, n = e } finally { try { i || null == r.return || r.return() } finally { if (u) throw n } } return a } }(e, t) || i(e, t) || function() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.") }() }
 
-            function a(e, t) { if (e) { if ("string" == typeof e) return i(e, t); var r = Object.prototype.toString.call(e).slice(8, -1); return "Object" === r && e.constructor && (r = e.constructor.name), "Map" === r || "Set" === r ? Array.from(e) : "Arguments" === r || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r) ? i(e, t) : void 0 } }
+            function i(e, t) { if (e) { if ("string" == typeof e) return u(e, t); var r = Object.prototype.toString.call(e).slice(8, -1); return "Object" === r && e.constructor && (r = e.constructor.name), "Map" === r || "Set" === r ? Array.from(e) : "Arguments" === r || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r) ? u(e, t) : void 0 } }
 
-            function i(e, t) {
+            function u(e, t) {
                 (null == t || t > e.length) && (t = e.length); for (var r = 0, o = new Array(t); r < t; r++) o[r] = e[r]; return o }
 
-            function u(e) { for (var t = 0; t < e.length; t++)
-                    for (var o = 0, n = Object.entries(e[t]); o < n.length; o++) { var a = r(n[o], 2),
-                            i = a[0],
-                            u = a[1]; if ("string" == typeof u) { var s = u.trim();
+            function s(e) { for (var t = 0; t < e.length; t++)
+                    for (var r = 0, o = Object.entries(e[t]); r < o.length; r++) { var n = a(o[r], 2),
+                            i = n[0],
+                            u = n[1]; if ("string" == typeof u) { var s = u.trim();
                             e[t][i] = s } }
                 return e }
 
-            function s(e, t, r) { for (var o = 0, n = 0; n < e.length; n++) e[n][t] === r && o++; return o }
+            function l(e, t, r) { for (var o = 0, n = 0; n < e.length; n++) e[n][t] === r && o++; return o }
 
-            function l(e, t) { var r = []; return e || (e = {}), t || (t = ""), e.forEach((function(e, o) { for (var n in e) e.hasOwnProperty(n) && e[n] && -1 !== e[n].toString().indexOf(t) && r.push(e) })), r }
+            function f(e, t) { var r = []; return e || (e = {}), t || (t = ""), e.forEach((function(e, o) { for (var n in e) e.hasOwnProperty(n) && e[n] && -1 !== e[n].toString().indexOf(t) && r.push(e) })), r }
 
-            function f(e, t, r) { return e.filter((function(e) { if ("string" == typeof e[t] && -1 !== e[t].toLowerCase().indexOf(r.toLowerCase())) return e })) }
+            function c(e, t, r) { return e.filter((function(e) { if ("string" == typeof e[t] && -1 !== e[t].toLowerCase().indexOf(r.toLowerCase())) return e })) }
 
-            function c(r, o, n) { for (var a = [], i = l(r, o), s = 0; s < n.length; s++) { var c = f(i, n[s], o);
-                    a = [].concat(t(a), t(c)) } return u(a = (0, e.uniqWith)(a, e.isEqual)) }
+            function d(t, o, n) { for (var a = [], i = f(t, o), u = 0; u < n.length; u++) { var l = c(i, n[u], o);
+                    a = [].concat(r(a), r(l)) } return s(a = (0, e.uniqWith)(a, e.isEqual)) }
 
-            function d(t, r, o) { return u((0, e.sortBy)(t, [r])) }
+            function y(r, o, n) { for (var i = 0; i < r.length; i++)
+                    if ("object" === t(r[i])) { Object.keys(r[i]); for (var u = 0, l = Object.entries(r[i]); u < l.length; u++) { var f = a(l[u], 2),
+                                c = f[0],
+                                d = f[1];
+                            Array.isArray(d) && (r[i][c] = (0, e.sortBy)(d, [o])) } }
+                return s((0, e.sortBy)(r, [o])) }
 
-            function h(t, r, o) { return u((0, e.sortBy)(t, [r]).reverse()) }
+            function h(r, o, n) { for (var i = 0; i < r.length; i++)
+                    if ("object" === t(r[i])) { Object.keys(r[i]); for (var u = 0, l = Object.entries(r[i]); u < l.length; u++) { var f = a(l[u], 2),
+                                c = f[0],
+                                d = f[1];
+                            Array.isArray(d) && (r[i][c] = (0, e.sortBy)(d, [o]).reverse()) } }
+                return s((0, e.sortBy)(r, [o]).reverse()) }
 
-            function y(e, t, r) { for (var o = [], n = 0; n < e.length; n++) e[n][t] === r && o.push(e[n]); return u(o) }
+            function p(e, t, r) { for (var o = [], n = 0; n < e.length; n++) e[n][t] === r && o.push(e[n]); return s(o) }
 
-            function p(e, t, r) { for (var o = [], n = 0; n < e.length; n++) e[n][t] !== r && o.push(e[n]); return u(o) }
+            function b(e, t, r) { for (var o = [], n = 0; n < e.length; n++) e[n][t] !== r && o.push(e[n]); return s(o) }
 
             function m(t, r, o, n) { var a = !(arguments.length > 4 && void 0 !== arguments[4]) || arguments[4],
                     i = arguments.length > 5 && void 0 !== arguments[5] ? arguments[5] : void 0,
-                    s = (0, e.filter)(t, r),
-                    l = (0, e.sortBy)(s, [o]); if (l = !1 === a ? h(l, o) : d(l, o), i) { var f = l.slice(0, i); return u(f) } return u(l) }
+                    u = (0, e.filter)(t, r),
+                    l = (0, e.sortBy)(u, [o]); if (l = !1 === a ? h(l, o) : y(l, o), i) { var f = l.slice(0, i); return s(f) } return s(l) }
 
-            function b(t, r) { return u((0, e.groupBy)(t, r)) }
+            function v(t, r) { return s((0, e.groupBy)(t, r)) }
 
-            function v(e, t) { var r = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e);
+            function g(e, t) { var r = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e);
                     t && (o = o.filter((function(t) { return Object.getOwnPropertyDescriptor(e, t).enumerable }))), r.push.apply(r, o) } return r }
 
-            function g(e) { for (var t = 1; t < arguments.length; t++) { var r = null != arguments[t] ? arguments[t] : {};
-                    t % 2 ? v(Object(r), !0).forEach((function(t) { w(e, t, r[t]) })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : v(Object(r)).forEach((function(t) { Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(r, t)) })) } return e }
+            function w(e) { for (var t = 1; t < arguments.length; t++) { var r = null != arguments[t] ? arguments[t] : {};
+                    t % 2 ? g(Object(r), !0).forEach((function(t) { O(e, t, r[t]) })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : g(Object(r)).forEach((function(t) { Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(r, t)) })) } return e }
 
-            function w(e, t, r) { return t in e ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : e[t] = r, e }
+            function O(e, t, r) { return t in e ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : e[t] = r, e }
 
-            function O(t, r) { var o = (0, e.merge)((0, e.keyBy)(t.data, t.key), (0, e.keyBy)(r.data, r.key)); return (0, e.values)(o) }
+            function A(t, r) { var o = (0, e.merge)((0, e.keyBy)(t.data, t.key), (0, e.keyBy)(r.data, r.key)); return (0, e.values)(o) }
 
-            function A() { var e = O([{ title: "I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.", status: "to do", id: 1 }, { title: "Because we loved each other too much and found each other too interesting. And I love that about humanity,  and in fact it’s the very reason I root for us to survive—because we are so stupid about each other.", status: "doing", id: 2 }, { title: "But a life without art,  without wonder,  without beautiful things—she would go mad. She has gone mad. What she needs are stories. Stories are a way to preserve one’s self. To be remembered. And to forget.", status: "doing", id: 3 }], { data: [{ name: "Whatever", status: "doing", problem_id: 2, id: 1 }, { name: "is", status: "doing", problem_id: 2, id: 2 }, { name: "people", status: "to do", problem_id: 2, id: 3 }], key: "problem_id", value: 2 });
+            function S() { var e = A([{ title: "I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.", status: "to do", id: 1 }, { title: "Because we loved each other too much and found each other too interesting. And I love that about humanity,  and in fact it’s the very reason I root for us to survive—because we are so stupid about each other.", status: "doing", id: 2 }, { title: "But a life without art,  without wonder,  without beautiful things—she would go mad. She has gone mad. What she needs are stories. Stories are a way to preserve one’s self. To be remembered. And to forget.", status: "doing", id: 3 }], { data: [{ name: "Whatever", status: "doing", problem_id: 2, id: 1 }, { name: "is", status: "doing", problem_id: 2, id: 2 }, { name: "people", status: "to do", problem_id: 2, id: 3 }], key: "problem_id", value: 2 });
                 console.log(e) }
 
-            function I(e, t) { return e.data.map((function(r) { return g(g({}, r), {}, { child: t.data.filter((function(o) { return r[e.key] === o[t.key] })).map((function(e) { return e })) }) })) }
+            function I(e, t) { return e.data.map((function(r) { return w(w({}, r), {}, { child: t.data.filter((function(o) { return r[e.key] === o[t.key] })).map((function(e) { return e })) }) })) }
 
-            function S(t, r) { var o = {};
-                o[r.key] = r.value; var n = t.data.map((function(e) { return g(g({}, e), {}, { child: r.data.filter((function(o) { return e[t.key] === o[r.key] })).map((function(e) { return e })) }) })),
+            function j(t, r) { var o = {};
+                o[r.key] = r.value; var n = t.data.map((function(e) { return w(w({}, e), {}, { child: r.data.filter((function(o) { return e[t.key] === o[r.key] })).map((function(e) { return e })) }) })),
                     a = (n.filter((function(e) { return o })), {}); return a[t.key] = t.value, (0, e.filter)(n, a) }
 
-            function j() { var e = [{ title: "I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.", status: "to do", id: 1 }, { title: "Because we loved each other too much and found each other too interesting. And I love that about humanity,  and in fact it’s the very reason I root for us to survive—because we are so stupid about each other.", status: "doing", id: 2 }, { title: "But a life without art,  without wonder,  without beautiful things—she would go mad. She has gone mad. What she needs are stories. Stories are a way to preserve one’s self. To be remembered. And to forget.", status: "doing", id: 3 }],
+            function E() { var e = [{ title: "I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.", status: "to do", id: 1 }, { title: "Because we loved each other too much and found each other too interesting. And I love that about humanity,  and in fact it’s the very reason I root for us to survive—because we are so stupid about each other.", status: "doing", id: 2 }, { title: "But a life without art,  without wonder,  without beautiful things—she would go mad. She has gone mad. What she needs are stories. Stories are a way to preserve one’s self. To be remembered. And to forget.", status: "doing", id: 3 }],
                     t = [{ name: "Whatever", status: "doing", problem_id: 2, id: 1 }, { name: "is", status: "doing", problem_id: 2, id: 2 }, { name: "people", status: "to do", problem_id: 2, id: 3 }],
-                    r = S({ data: e, key: "id", value: 2 }, { data: t, key: "problem_id", value: 2 });
+                    r = j({ data: e, key: "id", value: 2 }, { data: t, key: "problem_id", value: 2 });
                 console.log(r); var o = I({ data: e, key: "id" }, { data: t, key: "problem_id" });
                 console.log(o) }
 
-            function E(e) { return E = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) { return typeof e } : function(e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }, E(e) }
+            function k(e) { return k = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) { return typeof e } : function(e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }, k(e) }
 
             function U(t, r) { var o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : void 0; if (!(t.length > 0)) return []; if ("function" == typeof r) t.filter(r);
-                else { if ("string" == typeof r && "string" == typeof o) { var n = y(t, r, o); return n } if ("object" === E(r)) return (0, e.filter)(t, r); if ("string" == typeof r) return c(t, "", [r]) } var a = (0, e.filter)(t, r); return a }
+                else { if ("string" == typeof r && "string" == typeof o) { var n = p(t, r, o); return n } if ("object" === k(r)) return (0, e.filter)(t, r); if ("string" == typeof r) return d(t, "", [r]) } var a = (0, e.filter)(t, r); return a }
 
-            function k() { var e = [{ name: "Because we loved each other too much and found each other too interesting. And I love that about humanity,  and in fact it’s the very reason I root for us to survive—because we are so stupid about each other.", status: "doing", problem_id: 2, id: 1 }, { name: "I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.", status: "doing", problem_id: 2, id: 2 }, { name: "But a life without art,  without wonder,  without beautiful things—she would go mad. She has gone mad. What she needs are stories. Stories are a way to preserve one’s self. To be remembered. And to forget.", status: "to do", problem_id: 2, id: 3 }],
+            function x() { var e = [{ name: "Because we loved each other too much and found each other too interesting. And I love that about humanity,  and in fact it’s the very reason I root for us to survive—because we are so stupid about each other.", status: "doing", problem_id: 2, id: 1 }, { name: "I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.", status: "doing", problem_id: 2, id: 2 }, { name: "But a life without art,  without wonder,  without beautiful things—she would go mad. She has gone mad. What she needs are stories. Stories are a way to preserve one’s self. To be remembered. And to forget.", status: "to do", problem_id: 2, id: 3 }],
                     t = U(e, (function(e) { if ("to do" === e.status) return e })),
                     r = U(e, { status: "to do" }),
                     o = U(e, "status", "to do"),
                     n = U(e, "status");
                 console.log(t), console.log(r), console.log(o), console.log(n) }
 
-            function x(e, t) {
+            function B(e, t) {
                 (null == t || t > e.length) && (t = e.length); for (var r = 0, o = new Array(t); r < t; r++) o[r] = e[r]; return o }
 
-            function B(e, t) { return function(e) { return function(e) { if (Array.isArray(e)) return x(e) }(e) || function(e) { if ("undefined" != typeof Symbol && null != e[Symbol.iterator] || null != e["@@iterator"]) return Array.from(e) }(e) || function(e, t) { if (e) { if ("string" == typeof e) return x(e, t); var r = Object.prototype.toString.call(e).slice(8, -1); return "Object" === r && e.constructor && (r = e.constructor.name), "Map" === r || "Set" === r ? Array.from(e) : "Arguments" === r || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r) ? x(e, t) : void 0 } }(e) || function() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.") }() }(new Map(e.map((function(e) { return [e[t], e] }))).values()) } var P = [{ id: 1, hello: "whatsup" }, { id: 2, hello: "whatsup" }, { id: 1, hello: "whatsup" }];
+            function P(e, t) { return function(e) { return function(e) { if (Array.isArray(e)) return B(e) }(e) || function(e) { if ("undefined" != typeof Symbol && null != e[Symbol.iterator] || null != e["@@iterator"]) return Array.from(e) }(e) || function(e, t) { if (e) { if ("string" == typeof e) return B(e, t); var r = Object.prototype.toString.call(e).slice(8, -1); return "Object" === r && e.constructor && (r = e.constructor.name), "Map" === r || "Set" === r ? Array.from(e) : "Arguments" === r || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r) ? B(e, t) : void 0 } }(e) || function() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.") }() }(new Map(e.map((function(e) { return [e[t], e] }))).values()) } var C = [{ id: 1, hello: "whatsup" }, { id: 2, hello: "whatsup" }, { id: 1, hello: "whatsup" }];
 
-            function C() { var e = B(P, "id");
+            function T() { var e = P(C, "id");
                 console.log(e) } })(), n })() }));
