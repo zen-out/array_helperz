@@ -39,11 +39,9 @@
             function c(r, o, n) { for (var a = [], i = l(r, o), s = 0; s < n.length; s++) { var c = f(i, n[s], o);
                     a = [].concat(t(a), t(c)) } return u(a = (0, e.uniqWith)(a, e.isEqual)) }
 
-            function d(t, r, o) { if ("date" === o)
-                    for (var n = 0; n < t.length; n++) "string" == typeof t[n][r] ? t[n][r] = new Date(t[n][r]) : t[n][r] = t[n][r]; return u((0, e.sortBy)(t, [r])) }
+            function d(t, r, o) { return u((0, e.sortBy)(t, [r])) }
 
-            function h(t, r, o) { if ("date" === o)
-                    for (var n = 0; n < t.length; n++) "string" == typeof t[n][r] ? t[n][r] = new Date(t[n][r]) : t[n][r] = t[n][r]; return u((0, e.sortBy)(t, [r]).reverse()) }
+            function h(t, r, o) { return u((0, e.sortBy)(t, [r]).reverse()) }
 
             function y(e, t, r) { for (var o = [], n = 0; n < e.length; n++) e[n][t] === r && o.push(e[n]); return u(o) }
 
@@ -52,7 +50,7 @@
             function m(t, r, o, n) { var a = !(arguments.length > 4 && void 0 !== arguments[4]) || arguments[4],
                     i = arguments.length > 5 && void 0 !== arguments[5] ? arguments[5] : void 0,
                     s = (0, e.filter)(t, r),
-                    l = (0, e.sortBy)(s, [o]); if (l = !1 === a ? h(l, o, n) : d(l, o, n), i) { var f = l.slice(0, i); return u(f) } return u(l) }
+                    l = (0, e.sortBy)(s, [o]); if (l = !1 === a ? h(l, o) : d(l, o), i) { var f = l.slice(0, i); return u(f) } return u(l) }
 
             function b(t, r) { return u((0, e.groupBy)(t, r)) }
 
