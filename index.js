@@ -9,7 +9,7 @@
 
         function o(e) { var n = r[e]; if (void 0 !== n) return n.exports; var a = r[e] = { exports: {} }; return t[e](a, a.exports, o), a.exports }
         o.n = e => { var t = e && e.__esModule ? () => e.default : () => e; return o.d(t, { a: t }), t }, o.d = (e, t) => { for (var r in t) o.o(t, r) && !o.o(e, r) && Object.defineProperty(e, r, { enumerable: !0, get: t[r] }) }, o.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), o.r = e => { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }; var n = {}; return (() => { "use strict";
-            o.r(n), o.d(n, { contains: () => p, countByCondition: () => l, doesNotContain: () => b, filterAndSort: () => m, filterValues: () => d, filterWithFuncObjectOrString: () => U, getOneMakeChildOfAnother: () => j, getUnique: () => P, group: () => v, makeChildOfAnother: () => I, makeChildOfAnotherTest: () => E, mergeByKeys: () => A, search: () => f, sortAsc: () => y, sortDesc: () => h, testFilterWithFuncStringObject: () => x, testMergeByKeys: () => S, testUnique: () => T, trimArr: () => s }); var e = o(356);
+            o.r(n), o.d(n, { contains: () => p, countByCondition: () => l, doesNotContain: () => b, filterAndSort: () => m, filterValues: () => d, filterWithFuncObjectOrString: () => k, getOneMakeChildOfAnother: () => j, getUnique: () => T, group: () => v, intersection: () => C, makeChildOfAnother: () => I, makeChildOfAnotherTest: () => E, mergeByKeys: () => A, search: () => f, sortAsc: () => y, sortDesc: () => h, testFilterWithFuncStringObject: () => x, testMergeByKeys: () => S, testUnique: () => _, trimArr: () => s }); var e = o(356);
             o(826);
 
             function t(e) { return t = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) { return typeof e } : function(e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }, t(e) }
@@ -91,22 +91,33 @@
                 console.log(r); var o = I({ data: e, key: "id" }, { data: t, key: "problem_id" });
                 console.log(o) }
 
-            function k(e) { return k = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) { return typeof e } : function(e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }, k(e) }
+            function U(e) { return U = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) { return typeof e } : function(e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }, U(e) }
 
-            function U(t, r) { var o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : void 0; if (!(t.length > 0)) return []; if ("function" == typeof r) t.filter(r);
-                else { if ("string" == typeof r && "string" == typeof o) { var n = p(t, r, o); return n } if ("object" === k(r)) return (0, e.filter)(t, r); if ("string" == typeof r) return d(t, "", [r]) } var a = (0, e.filter)(t, r); return a }
+            function k(t, r) { var o = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : void 0; if (!(t.length > 0)) return []; if ("function" == typeof r) t.filter(r);
+                else { if ("string" == typeof r && "string" == typeof o) { var n = p(t, r, o); return n } if ("object" === U(r)) return (0, e.filter)(t, r); if ("string" == typeof r) return d(t, "", [r]) } var a = (0, e.filter)(t, r); return a }
 
             function x() { var e = [{ name: "Because we loved each other too much and found each other too interesting. And I love that about humanity,  and in fact it’s the very reason I root for us to survive—because we are so stupid about each other.", status: "doing", problem_id: 2, id: 1 }, { name: "I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.", status: "doing", problem_id: 2, id: 2 }, { name: "But a life without art,  without wonder,  without beautiful things—she would go mad. She has gone mad. What she needs are stories. Stories are a way to preserve one’s self. To be remembered. And to forget.", status: "to do", problem_id: 2, id: 3 }],
-                    t = U(e, (function(e) { if ("to do" === e.status) return e })),
-                    r = U(e, { status: "to do" }),
-                    o = U(e, "status", "to do"),
-                    n = U(e, "status");
+                    t = k(e, (function(e) { if ("to do" === e.status) return e })),
+                    r = k(e, { status: "to do" }),
+                    o = k(e, "status", "to do"),
+                    n = k(e, "status");
                 console.log(t), console.log(r), console.log(o), console.log(n) }
 
             function B(e, t) {
                 (null == t || t > e.length) && (t = e.length); for (var r = 0, o = new Array(t); r < t; r++) o[r] = e[r]; return o }
 
-            function P(e, t) { return function(e) { return function(e) { if (Array.isArray(e)) return B(e) }(e) || function(e) { if ("undefined" != typeof Symbol && null != e[Symbol.iterator] || null != e["@@iterator"]) return Array.from(e) }(e) || function(e, t) { if (e) { if ("string" == typeof e) return B(e, t); var r = Object.prototype.toString.call(e).slice(8, -1); return "Object" === r && e.constructor && (r = e.constructor.name), "Map" === r || "Set" === r ? Array.from(e) : "Arguments" === r || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r) ? B(e, t) : void 0 } }(e) || function() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.") }() }(new Map(e.map((function(e) { return [e[t], e] }))).values()) } var C = [{ id: 1, hello: "whatsup" }, { id: 2, hello: "whatsup" }, { id: 1, hello: "whatsup" }];
+            function C(e, t) { var r, o, n = new Set(e),
+                    a = new Set(t),
+                    i = [];
+                n.size > a.size ? (r = n, o = a) : (r = a, o = n); var u, s = function(e, t) { var r = "undefined" != typeof Symbol && e[Symbol.iterator] || e["@@iterator"]; if (!r) { if (Array.isArray(e) || (r = function(e, t) { if (e) { if ("string" == typeof e) return B(e, t); var r = Object.prototype.toString.call(e).slice(8, -1); return "Object" === r && e.constructor && (r = e.constructor.name), "Map" === r || "Set" === r ? Array.from(e) : "Arguments" === r || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r) ? B(e, t) : void 0 } }(e)) || t && e && "number" == typeof e.length) { r && (e = r); var o = 0,
+                                n = function() {}; return { s: n, n: function() { return o >= e.length ? { done: !0 } : { done: !1, value: e[o++] } }, e: function(e) { throw e }, f: n } } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.") } var a, i = !0,
+                        u = !1; return { s: function() { r = r.call(e) }, n: function() { var e = r.next(); return i = e.done, e }, e: function(e) { u = !0, a = e }, f: function() { try { i || null == r.return || r.return() } finally { if (u) throw a } } } }(r); try { for (s.s(); !(u = s.n()).done;) { var l = u.value;
+                        o.has(l) && i.push(l) } } catch (e) { s.e(e) } finally { s.f() } return i }
 
-            function T() { var e = P(C, "id");
+            function P(e, t) {
+                (null == t || t > e.length) && (t = e.length); for (var r = 0, o = new Array(t); r < t; r++) o[r] = e[r]; return o }
+
+            function T(e, t) { return function(e) { return function(e) { if (Array.isArray(e)) return P(e) }(e) || function(e) { if ("undefined" != typeof Symbol && null != e[Symbol.iterator] || null != e["@@iterator"]) return Array.from(e) }(e) || function(e, t) { if (e) { if ("string" == typeof e) return P(e, t); var r = Object.prototype.toString.call(e).slice(8, -1); return "Object" === r && e.constructor && (r = e.constructor.name), "Map" === r || "Set" === r ? Array.from(e) : "Arguments" === r || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r) ? P(e, t) : void 0 } }(e) || function() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.") }() }(new Map(e.map((function(e) { return [e[t], e] }))).values()) } var M = [{ id: 1, hello: "whatsup" }, { id: 2, hello: "whatsup" }, { id: 1, hello: "whatsup" }];
+
+            function _() { var e = T(M, "id");
                 console.log(e) } })(), n })() }));

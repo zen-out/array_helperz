@@ -53,7 +53,8 @@ let arrTwo = [
 let arr1Child = { data: arrOne, key: "id" }
 let arr2 = {
     data: arrTwo,
-    key: "id",
+    key: "problem_id",
+    value: 2
 }
 let merged = arrz.mergeByKeys(arrOne, arr2)
 console.log("🚀 ~ file: playground.js ~ line 48 ~ merged", merged)
@@ -77,7 +78,7 @@ let testArr = [{
         hello: "whatsup"
     },
 ]
-// second parameter is the key 
+
     let newArr = getUnique(testArr, "id")
 ```
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -100,7 +101,9 @@ let testArr = [{
 </dd>
 <dt><a href="#countByCondition">countByCondition(array, key, value)</a> ⇒ <code>number</code></dt>
 <dd></dd>
-<dt><a href="#filterValues">filterValues(array, keyword, arrOfKeys)</a> ⇒ <code>array</code></dt>
+<dt><a href="#search">search(array, string)</a> ⇒ <code>array</code></dt>
+<dd></dd>
+<dt><a href="#filterItems">filterItems(array, keyword, arrOfKeys)</a> ⇒ <code>array</code></dt>
 <dd></dd>
 <dt><a href="#sortAsc">sortAsc(array, property, type)</a> ⇒ <code>array</code></dt>
 <dd></dd>
@@ -115,7 +118,7 @@ let testArr = [{
 <dt><a href="#group">group(data, groupByCondition)</a> ⇒ <code>array</code></dt>
 <dd><ul>
 <li>@example
-const arrz = require(&quot;./index.js&quot;)
+const { arrz } = require(&quot;./index.js&quot;)
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -127,6 +130,8 @@ console.log(&quot;🚀 ~ file: playground.js ~ line 9 ~ output&quot;, output)</l
 </ul>
 </dd>
 <dt><a href="#getUnique">getUnique(arr, key)</a> ⇒ <code>any</code></dt>
+<dd></dd>
+<dt><a href="#intersection">intersection(nums1, nums2)</a> ⇒ <code>any</code></dt>
 <dd></dd>
 <dt><a href="#mergeByKeys">mergeByKeys(arr, object)</a> ⇒ <code>any</code></dt>
 <dd></dd>
@@ -199,7 +204,7 @@ trims array values
 
 **Example**  
 ```js
-const arrz = require("./index.js")
+const { arrz } = require("./index.js")
 let sampleInput = [{
 status: "to do",
 problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
@@ -211,9 +216,45 @@ plan: "test better, when you develop, i think it would also be great actually to
 let output = arrz.countByCondition(sampleInput, "status", "to do")
 console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 ```
-<a name="filterValues"></a>
+<a name="search"></a>
 
-## filterValues(array, keyword, arrOfKeys) ⇒ <code>array</code>
+## search(array, string) ⇒ <code>array</code>
+**Kind**: global function  
+**Date**: 2022-03-18  
+**Author**: zen-out  
+
+| Param  | Type                |
+|--------|---------------------|
+| array  | <code>array</code>  |
+| string | <code>string</code> |
+
+**Example**  
+```js
+var data = [{
+        "id": "1",
+        "name": "Ali",
+        "BOD": "29/10/2055",
+        "type": "primary",
+        "email": null,
+        "mobile": "010100000000",
+        "notes": ["note1", "note2.nett", "note3"]
+    },
+    {
+        "id": "2",
+        "name": "Tie",
+        "BOD": "29/10/2055",
+        "type": "primary",
+        "email": "b@v.net",
+        "mobile": "0100000000",
+        "notes": ["note4", "note5", "note6"]
+    }
+];
+// search examples .
+console.log("found", search(data, ".net")); //expected data[0] data[1]
+```
+<a name="filterItems"></a>
+
+## filterItems(array, keyword, arrOfKeys) ⇒ <code>array</code>
 **Kind**: global function  
 **Returns**: <code>array</code> - of objects  
 **Date**: 2022-02-17  
@@ -227,7 +268,7 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 
 **Example**  
 ```js
-const arrz = require("./index.js")
+const { arrz } = require("./index.js")
 let sampleInput = [{
 status: "to do",
 problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
@@ -255,7 +296,7 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 
 **Example**  
 ```js
-const arrz = require("./index.js")
+const { arrz } = require("./index.js")
 let sampleInput = [{
 created: new Date(2020, 12, 1),
 status: "to do",
@@ -279,7 +320,7 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 
 **Example**  
 ```js
-const arrz = require("./index.js")
+const { arrz } = require("./index.js")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -305,7 +346,7 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 
 **Example**  
 ```js
-const arrz = require("./index.js")
+const { arrz } = require("./index.js")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -330,7 +371,7 @@ let output = arrz.contains(sampleInput, "seconds", 500)
 
 **Example**  
 ```js
-const arrz = require("./index.js")
+const { arrz } = require("./index.js")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -356,7 +397,7 @@ let output = arrz.doesNotContain(sampleInput, "seconds", 500)
 
 **Example**  
 ```js
-const arrz = require("./index.js")
+const { arrz } = require("./index.js")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -370,7 +411,7 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 
 ## group(data, groupByCondition) ⇒ <code>array</code>
 * @example
-const arrz = require("./index.js")
+const { arrz } = require("./index.js")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -422,6 +463,25 @@ export function testUnique() {
     console.log(newArr)
 }
 ```
+<a name="intersection"></a>
+
+## intersection(nums1, nums2) ⇒ <code>any</code>
+**Kind**: global function  
+**Date**: 2022-03-22  
+**Author**: zen-out  
+
+| Param | Type             |
+|-------|------------------|
+| nums1 | <code>any</code> |
+| nums2 | <code>any</code> |
+
+**Example**  
+```js
+let expected_keys =["hello"]
+    let actual_keys =["hello", "whatsup"]
+    let merged = intersection(expected_keys, actual_keys)
+    merged will be ["hello"]
+```
 <a name="mergeByKeys"></a>
 
 ## mergeByKeys(arr, object) ⇒ <code>any</code>
@@ -429,67 +489,19 @@ export function testUnique() {
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param  | Type                | Description                                                |
-|--------|---------------------|------------------------------------------------------------|
-| arr    | <code>any</code>    |                                                            |
-| object | <code>object</code> | {data: arr, key: "id",} -> reference to the joining to arr |
+| Param  | Type                | Description                                                       |
+|--------|---------------------|-------------------------------------------------------------------|
+| arr    | <code>any</code>    |                                                                   |
+| object | <code>object</code> | {data: arr, key: "problem_id"} -> reference to the joining to arr |
 
 **Example**  
 ```js
-let arrOne = [{
-            title: 'I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.',
-            status: 'to do',
-            id: 1
-        },
-        {
-            title: 'Because we loved each other too much and found each other too interesting. And I love that about humanity,  and in fact it’s the very reason I root for us to survive—because we are so stupid about each other.',
-            status: 'doing',
-            id: 2
-        },
-        {
-            title: 'But a life without art,  without wonder,  without beautiful things—she would go mad. She has gone mad. What she needs are stories. Stories are a way to preserve one’s self. To be remembered. And to forget.',
-            status: 'doing',
-            id: 3
-        }
-    ]
-    let arrTwo = [
-        { name: 'Whatever', status: 'doing', problem_id: 2, id: 1 },
-        { name: 'is', status: 'doing', problem_id: 2, id: 2 },
-        { name: 'people', status: 'to do', problem_id: 2, id: 3 }
-    ]
-    let arr1 = {
-        data: arrOne, 
-        key: "id
-    }
-    let arr2 = {
-        data: arrTwo,
-        key: "id",
-    }
-
-    let merged = mergeByKeys(arr1, arr2)
-    // output [
-  {
-    title: 'I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.',
-    status: 'doing',
-    id: 1,
-    name: 'Whatever',
-    problem_id: 2
-  },
-  {
-    title: 'Because we loved each other too much and found each other too interesting. And I love that about humanity,  and in fact it’s the very reason I root for us to survive—because we are so stupid about each other.',
-    status: 'doing',
-    id: 1,
-    name: 'Whatever',
-    problem_id: 2
-  },
-  {
-    title: 'But a life without art,  without wonder,  without beautiful things—she would go mad. She has gone mad. What she needs are stories. Stories are a way to preserve one’s self. To be remembered. And to forget.',
-    status: 'doing',
-    id: 1,
-    name: 'Whatever',
-    problem_id: 2
-  }
-]
+let arr1Child2 = { data: arr, key: "id" }
+let arr22 = {
+    data: arr2,
+    key: "id",
+}
+let merged2 = arrz.mergeByKeys(arr1Child2, arr22)
 ```
 <a name="makeChildOfAnother"></a>
 

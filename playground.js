@@ -89,3 +89,9 @@ let arr22 = {
 }
 let merged2 = arrz.mergeByKeys(arr1Child2, arr22)
 console.log(merged2)
+
+let expected_keys = ["hello"]
+let actual_keys = ["hello", "whatsup"]
+let merged = arrz.intersection(expected_keys, actual_keys)
+
+console.log(merged)
