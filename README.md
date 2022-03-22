@@ -1,4 +1,24 @@
 # array_helperz
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![NPM Downloads](https://img.shields.io/npm/dw/array_helperz)
+[Play with docs](https://zen-out.github.io/modules/array_helperz.html)
+## Instructions: 
+
+```js
+npm install array_helperz
+const array_helperz =  require('array_helperz')
+```
+
+## If utilizing in html...: 
+```html
+<script src="./node_modules/array_helperz/index.js"></script>
+<script> 
+$(()=> { 
+     const output =  array_helperz.method(parameter)
+ })
+</script>
+```
 ```js
 const arrz = require("array_helperz")
 
@@ -80,16 +100,37 @@ let testArr = [{
 ]
 
     let newArr = getUnique(testArr, "id")
-```
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![NPM Downloads](https://img.shields.io/npm/dw/array_helperz)
-## Instructions: 
-```npm install array_helperz ``` 
- ``` const array_helperz =  require('array_helperz')```
 
-## If utilizing in html...: 
-```<script src="./node_modules/array_helperz/index.js"></script> ``` 
- ``` const output =  array_helperz.method(parameter)```
+let expected_keys = ["hello"]
+let actual_keys = ["hello", "whatsup"]
+let merged = arrz.intersection(expected_keys, actual_keys)
+
+console.log(merged)
+
+let types = [{
+    "user_id": 4,
+    "task_id": 1,
+    "tag": "quote",
+    "snippet": "be more selfish with your time. this is your life. reach your own goals. be more confident in yourself, you got this. i want cyrus on my team",
+    "hourglass_id": 4,
+    "id": 1
+}, {
+    "user_id": 4,
+    "task_id": 1,
+    "tag": "quote",
+    "snippet": "be more selfish with your time. this is your life. reach your own goals. be more confident in yourself, you got this. i want cyrus on my team",
+    "hourglass_id": 4,
+    "id": 2
+}]
+
+function removeObj(x) {
+    if (x.id === 2) {
+        return true;
+    }
+}
+let data = arrz.removeByFunction(types, removeObj)
+console.log(data)
+```
 
 ## Functions
 
@@ -142,6 +183,8 @@ console.log(&quot;🚀 ~ file: playground.js ~ line 9 ~ output&quot;, output)</l
 <dt><a href="#makeChildOfAnotherTest">makeChildOfAnotherTest()</a> ⇒ <code>any</code></dt>
 <dd><p>描述</p>
 </dd>
+<dt><a href="#removeByFunction">removeByFunction(arr, func)</a> ⇒ <code>array</code></dt>
+<dd></dd>
 </dl>
 
 <a name="filterWithFuncObjectOrString"></a>
@@ -622,3 +665,39 @@ output
 **Kind**: global function  
 **Date**: 2022-03-15  
 **Author**: zen-out  
+<a name="removeByFunction"></a>
+
+## removeByFunction(arr, func) ⇒ <code>array</code>
+**Kind**: global function  
+**Date**: 2022-03-22  
+**Author**: zen-out  
+
+| Param | Type                  |
+|-------|-----------------------|
+| arr   | <code>any</code>      |
+| func  | <code>function</code> |
+
+**Example**  
+```js
+let types = [{
+    "user_id": 4,
+    "task_id": 1,
+    "tag": "quote",
+    "snippet": "be more selfish with your time. this is your life. reach your own goals. be more confident in yourself, you got this. i want cyrus on my team",
+    "hourglass_id": 4,
+    "id": 1
+}, {
+    "user_id": 4,
+    "task_id": 1,
+    "tag": "quote",
+    "snippet": "be more selfish with your time. this is your life. reach your own goals. be more confident in yourself, you got this. i want cyrus on my team",
+    "hourglass_id": 4,
+    "id": 2
+}]
+
+function removeObj(x) {
+    if (x.id === 2) {
+        return true;
+    }
+}
+```

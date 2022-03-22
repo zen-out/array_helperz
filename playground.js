@@ -1,5 +1,7 @@
 const { map, merge, find, filter, keyBy, values } = require("lodash")
+const FuzzySearch = require("fuzzy-search")
 const _ = require("lodash")
+const fuseWithOperators = require("fuse-operators")
 const arrz = require("./index.js")
 let arrOne = [{
         title: 'I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.',
@@ -80,18 +82,32 @@ function mergeByKeys(obj, obj2) {
     return getValues;
 }
 
-
-
-let arr1Child2 = { data: arrOne, key: "id" }
-let arr22 = {
-    data: arrTwo,
-    key: "id",
-}
-let merged2 = arrz.mergeByKeys(arr1Child2, arr22)
-console.log(merged2)
-
 let expected_keys = ["hello"]
 let actual_keys = ["hello", "whatsup"]
 let merged = arrz.intersection(expected_keys, actual_keys)
 
 console.log(merged)
+
+let types = [{
+    "user_id": 4,
+    "task_id": 1,
+    "tag": "quote",
+    "snippet": "be more selfish with your time. this is your life. reach your own goals. be more confident in yourself, you got this. i want cyrus on my team",
+    "hourglass_id": 4,
+    "id": 1
+}, {
+    "user_id": 4,
+    "task_id": 1,
+    "tag": "quote",
+    "snippet": "be more selfish with your time. this is your life. reach your own goals. be more confident in yourself, you got this. i want cyrus on my team",
+    "hourglass_id": 4,
+    "id": 2
+}]
+
+function removeObj(x) {
+    if (x.id === 2) {
+        return true;
+    }
+}
+let data = arrz.removeByFunction(types, removeObj)
+console.log(data)
