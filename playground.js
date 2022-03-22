@@ -1,7 +1,5 @@
 const { map, merge, find, filter, keyBy, values } = require("lodash")
-const FuzzySearch = require("fuzzy-search")
 const _ = require("lodash")
-const fuseWithOperators = require("fuse-operators")
 const arrz = require("./index.js")
 let arrOne = [{
         title: 'I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.',
