@@ -130,6 +130,9 @@ function removeObj(x) {
 }
 let data = arrz.removeByFunction(types, removeObj)
 console.log(data)
+let hourglass = [{id: 2, }, {id: 3}]
+let test = arrz.replaceKey(hourglass, "id", "hourglass_id")
+console.log(test)
 ```
 
 ## Functions
@@ -194,11 +197,11 @@ console.log(&quot;🚀 ~ file: playground.js ~ line 9 ~ output&quot;, output)</l
 **Date**: 2022-03-17  
 **Author**: zen-out  
 
-| Param  | Type             | Description |
-|--------|------------------|-------------|
-| array  | <code>any</code> |             |
-| object | <code>any</code> |             |
-| value  | <code>any</code> | = undefined |
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>any</code> |  |
+| object | <code>any</code> |  |
+| value | <code>any</code> | = undefined |
 
 **Example**  
 ```js
@@ -227,9 +230,9 @@ trims array values
 **Author**: zen-out  
 **Author**: zen-out  
 
-| Param | Type               |
-|-------|--------------------|
-| arr   | <code>array</code> |
+| Param | Type |
+| --- | --- |
+| arr | <code>array</code> | 
 
 <a name="countByCondition"></a>
 
@@ -239,11 +242,11 @@ trims array values
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type                |
-|-------|---------------------|
-| array | <code>array</code>  |
-| key   | <code>string</code> |
-| value | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| array | <code>array</code> | 
+| key | <code>string</code> | 
+| value | <code>string</code> | 
 
 **Example**  
 ```js
@@ -266,10 +269,10 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-03-18  
 **Author**: zen-out  
 
-| Param  | Type                |
-|--------|---------------------|
-| array  | <code>array</code>  |
-| string | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| array | <code>array</code> | 
+| string | <code>string</code> | 
 
 **Example**  
 ```js
@@ -303,11 +306,11 @@ console.log("found", search(data, ".net")); //expected data[0] data[1]
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param     | Type                |
-|-----------|---------------------|
-| array     | <code>array</code>  |
-| keyword   | <code>string</code> |
-| arrOfKeys | <code>array</code>  |
+| Param | Type |
+| --- | --- |
+| array | <code>array</code> | 
+| keyword | <code>string</code> | 
+| arrOfKeys | <code>array</code> | 
 
 **Example**  
 ```js
@@ -331,11 +334,11 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param    | Type                | Description       |
-|----------|---------------------|-------------------|
-| array    | <code>array</code>  |                   |
-| property | <code>string</code> |                   |
-| type     | <code>string</code> | (date) - optional |
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>array</code> |  |
+| property | <code>string</code> |  |
+| type | <code>string</code> | (date) - optional |
 
 **Example**  
 ```js
@@ -356,10 +359,10 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param    | Type                |
-|----------|---------------------|
-| array    | <code>array</code>  |
-| property | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| array | <code>array</code> | 
+| property | <code>string</code> | 
 
 **Example**  
 ```js
@@ -381,11 +384,11 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param    | Type                |
-|----------|---------------------|
-| array    | <code>array</code>  |
-| property | <code>string</code> |
-| value    | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| array | <code>array</code> | 
+| property | <code>string</code> | 
+| value | <code>string</code> | 
 
 **Example**  
 ```js
@@ -406,11 +409,11 @@ let output = arrz.contains(sampleInput, "seconds", 500)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param    | Type                |
-|----------|---------------------|
-| array    | <code>array</code>  |
-| property | <code>string</code> |
-| value    | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| array | <code>array</code> | 
+| property | <code>string</code> | 
+| value | <code>string</code> | 
 
 **Example**  
 ```js
@@ -429,14 +432,14 @@ let output = arrz.doesNotContain(sampleInput, "seconds", 500)
 **Kind**: global function  
 **Date**: 2022-02-17  
 
-| Param     | Type                 | Default           |
-|-----------|----------------------|-------------------|
-| data      | <code>array</code>   |                   |
-| object    | <code>object</code>  |                   |
-| sortValue | <code>string</code>  |                   |
-| sortType  | <code>string</code>  |                   |
-| asc       | <code>boolean</code> | <code>true</code> |
-| limit     | <code>number</code>  |                   |
+| Param | Type | Default |
+| --- | --- | --- |
+| data | <code>array</code> |  | 
+| object | <code>object</code> |  | 
+| sortValue | <code>string</code> |  | 
+| sortType | <code>string</code> |  | 
+| asc | <code>boolean</code> | <code>true</code> | 
+| limit | <code>number</code> |  | 
 
 **Example**  
 ```js
@@ -468,10 +471,10 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param            | Type                |
-|------------------|---------------------|
-| data             | <code>array</code>  |
-| groupByCondition | <code>string</code> |
+| Param | Type |
+| --- | --- |
+| data | <code>array</code> | 
+| groupByCondition | <code>string</code> | 
 
 <a name="getUnique"></a>
 
@@ -480,10 +483,10 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 **Date**: 2022-03-18  
 **Author**: zen-out  
 
-| Param | Type             |
-|-------|------------------|
-| arr   | <code>any</code> |
-| key   | <code>any</code> |
+| Param | Type |
+| --- | --- |
+| arr | <code>any</code> | 
+| key | <code>any</code> | 
 
 **Example**  
 ```js
@@ -513,10 +516,10 @@ export function testUnique() {
 **Date**: 2022-03-22  
 **Author**: zen-out  
 
-| Param | Type             |
-|-------|------------------|
-| nums1 | <code>any</code> |
-| nums2 | <code>any</code> |
+| Param | Type |
+| --- | --- |
+| nums1 | <code>any</code> | 
+| nums2 | <code>any</code> | 
 
 **Example**  
 ```js
@@ -532,9 +535,9 @@ let expected_keys =["hello"]
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param  | Type                | Description                                                       |
-|--------|---------------------|-------------------------------------------------------------------|
-| arr    | <code>any</code>    |                                                                   |
+| Param | Type | Description |
+| --- | --- | --- |
+| arr | <code>any</code> |  |
 | object | <code>object</code> | {data: arr, key: "problem_id"} -> reference to the joining to arr |
 
 **Example**  
@@ -553,10 +556,10 @@ let merged2 = arrz.mergeByKeys(arr1Child2, arr22)
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param | Type             |
-|-------|------------------|
-| arr   | <code>any</code> |
-| arr2  | <code>any</code> |
+| Param | Type |
+| --- | --- |
+| arr | <code>any</code> | 
+| arr2 | <code>any</code> | 
 
 **Example**  
 ```js
@@ -614,10 +617,10 @@ output
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param | Type             |
-|-------|------------------|
-| arr   | <code>any</code> |
-| arr2  | <code>any</code> |
+| Param | Type |
+| --- | --- |
+| arr | <code>any</code> | 
+| arr2 | <code>any</code> | 
 
 **Example**  
 ```js
@@ -672,10 +675,10 @@ output
 **Date**: 2022-03-22  
 **Author**: zen-out  
 
-| Param | Type                  |
-|-------|-----------------------|
-| arr   | <code>any</code>      |
-| func  | <code>function</code> |
+| Param | Type |
+| --- | --- |
+| arr | <code>any</code> | 
+| func | <code>function</code> | 
 
 **Example**  
 ```js

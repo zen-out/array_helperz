@@ -109,3 +109,8 @@ function removeObj(x) {
 }
 let data = arrz.removeByFunction(types, removeObj)
 console.log(data)
+
+
+let hourglass = [{id: 2, }, {id: 3}]
+let test = arrz.replaceKey(hourglass, "id", "hourglass_id")
+console.log(test)
