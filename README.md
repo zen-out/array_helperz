@@ -22,92 +22,27 @@ $(()=> {
 ```js
 const arrz = require("array_helperz")
 
-let sampleInput = [{
-    seconds: 500,
-    created: new Date(2020, 12, 1),
-    status: "to do",
-    problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
-}, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
-
-
-let contains = arrz.contains(sampleInput, "seconds", 500)
-console.log("🚀 ~ file: index.js ~ line 12 ~ contains", contains)
-let doesNotContain = arrz.doesNotContain(sampleInput, "seconds", 500)
-console.log("🚀 ~ file: index.js ~ line 14 ~ doesNotContain", doesNotContain)
-let count = arrz.countByCondition(sampleInput, "status", "to do")
-console.log("🚀 ~ file: index.js ~ line 16 ~ count", count)
-let filter = arrz.filterValues(sampleInput, "segment", ["problem"])
-console.log("🚀 ~ file: index.js ~ line 18 ~ filter", filter)
-let sortDesc = arrz.sortDesc(sampleInput, "seconds", "integer")
-console.log("🚀 ~ file: index.js ~ line 20 ~ sortDesc", sortDesc)
-let sortAsc = arrz.sortAsc(sampleInput, "seconds", "integer")
-console.log("🚀 ~ file: index.js ~ line 22 ~ sortAsc", sortAsc)
-let grouped = arrz.group(sampleInput, "status")
-console.log("🚀 ~ file: index.js ~ line 23 ~ grouped", grouped)
-    let func = arrz.filterWithFuncObjectOrString(arrTwo, getToDoFunction)
-    let obj = arrz.filterWithFuncObjectOrString(arrTwo, { status: "to do" })
-    let keyValue = arrz.filterWithFuncObjectOrString(arrTwo, "status", "to do")
-    let key = arrz.filterWithFuncObjectOrString(arrTwo, "status")
-let arrOne = [{
+let arr = [{
         title: 'I want to be free. Free to live,  and to find my own way,  to love,  or to be alone,  but at least it is my choice,  and I am so tired of not having choices,  so scared of the years rushing past beneath my feet. I do not want to die as I’ve lived,  which is no life at all.',
         status: 'to do',
+        date: new Date(2020, 1, 1),
         id: 1
     },
     {
         title: 'Because we loved each other too much and found each other too interesting. And I love that about humanity,  and in fact it’s the very reason I root for us to survive—because we are so stupid about each other.',
         status: 'doing',
+        date: new Date(2021, 1, 1),
         id: 2
     },
     {
         title: 'But a life without art,  without wonder,  without beautiful things—she would go mad. She has gone mad. What she needs are stories. Stories are a way to preserve one’s self. To be remembered. And to forget.',
         status: 'doing',
+        date: new Date(2022, 1, 1)
         id: 3
     }
 ]
-let arrTwo = [
-    { name: 'Whatever', status: 'doing', problem_id: 2, id: 1 },
-    { name: 'is', status: 'doing', problem_id: 2, id: 2 },
-    { name: 'people', status: 'to do', problem_id: 2, id: 3 }
-]
 
-let arr1Child = { data: arrOne, key: "id" }
-let arr2 = {
-    data: arrTwo,
-    key: "problem_id",
-    value: 2
-}
-let merged = arrz.mergeByKeys(arrOne, arr2)
-console.log("🚀 ~ file: playground.js ~ line 48 ~ merged", merged)
-let arr2Child = { data: arrTwo, key: "problem_id" }
-let result = arrz.makeChildOfAnother(arr1Child, arr2Child)
-let arr1GetOne = { data: arrOne, key: "id", value: 2 }
-console.log("🚀 ~ file: playground.js ~ line 52 ~ result", result)
-let arr2GetOne = { data: arrTwo, key: "problem_id", value: 2 }
-let result2 = arrz.getOneMakeChildOfAnother(arr1GetOne, arr2GetOne)
-console.log("🚀 ~ file: playground.js ~ line 54 ~ result2", result2)
-let testArr = [{
-        id: 1,
-        hello: "whatsup"
-    },
-    {
-        id: 2,
-        hello: "whatsup"
-    },
-    {
-        id: 1,
-        hello: "whatsup"
-    },
-]
-
-    let newArr = getUnique(testArr, "id")
-
-let expected_keys = ["hello"]
-let actual_keys = ["hello", "whatsup"]
-let merged = arrz.intersection(expected_keys, actual_keys)
-
-console.log(merged)
-
-let types = [{
+let arr2 = [{
     "user_id": 4,
     "task_id": 1,
     "tag": "quote",
@@ -128,11 +63,26 @@ function removeObj(x) {
         return true;
     }
 }
-let data = arrz.removeByFunction(types, removeObj)
-console.log(data)
-let hourglass = [{id: 2, }, {id: 3}]
-let test = arrz.replaceKey(hourglass, "id", "hourglass_id")
-console.log(test)
+
+
+arrz.filterWithFuncObjectOrString(arr, { status: "to do" })
+arrz.trimArr(arr) // trims if value is string
+arrz.countByCondition(arr, "id", 1) // returns number
+arrz.search(arr, stringValue) // returns arr
+arrz.filterItems(arr, stringKey, stringValue) // search for specific key 
+arrz.filterValues(arr, stringValue, arrOfKeys)
+arrz.sortAsc(arr, stringKey)
+arrz.sortDesc(arr, stringKey)
+arrz.contains(arr, stringKey, stringValue)
+arrz.doesNotContain(arr, stringKey, stringValue)
+arrz.group(arr, stringKey)
+arrz.getUnique(arr, stringKey)
+arrz.intersection(arr, arr2)
+arrz.mergeByKeys({data: arr, key: "id" }, {data: arr2, key: "id" })
+arrz.makeChildOfAnother({data: arr, key: "id" }, {data: arr2, key: "id" })
+arrz.getOneMakeChildOfAnother({data: arr, key: "id", value: 2 }, {data: arr2, key: "id", value: 3 })
+arrz.removeByFunction(arr, function sort(x) {if (x.id === 1 {return true})})
+arrz.replaceKey(arr, originalKey, replaceKey)
 ```
 
 ## Functions
@@ -147,17 +97,15 @@ console.log(test)
 <dd></dd>
 <dt><a href="#search">search(array, string)</a> ⇒ <code>array</code></dt>
 <dd></dd>
-<dt><a href="#filterItems">filterItems(array, keyword, arrOfKeys)</a> ⇒ <code>array</code></dt>
+<dt><a href="#filterValues">filterValues(array, keyword, arrOfKeys)</a> ⇒ <code>array</code></dt>
 <dd></dd>
-<dt><a href="#sortAsc">sortAsc(array, property, type)</a> ⇒ <code>array</code></dt>
+<dt><a href="#sortAsc">sortAsc(array, key)</a> ⇒ <code>array</code></dt>
 <dd></dd>
-<dt><a href="#sortDesc">sortDesc(array, property)</a> ⇒ <code>array</code></dt>
+<dt><a href="#sortDesc">sortDesc(array, key)</a> ⇒ <code>array</code></dt>
 <dd></dd>
 <dt><a href="#contains">contains(array, property, value)</a> ⇒ <code>array</code></dt>
 <dd></dd>
 <dt><a href="#doesNotContain">doesNotContain(array, property, value)</a> ⇒ <code>array</code></dt>
-<dd></dd>
-<dt><a href="#filterAndSort">filterAndSort(data, object, sortValue, sortType, asc, limit)</a> ⇒ <code>array</code></dt>
 <dd></dd>
 <dt><a href="#group">group(data, groupByCondition)</a> ⇒ <code>array</code></dt>
 <dd><ul>
@@ -179,15 +127,15 @@ console.log(&quot;🚀 ~ file: playground.js ~ line 9 ~ output&quot;, output)</l
 <dd></dd>
 <dt><a href="#mergeByKeys">mergeByKeys(arr, object)</a> ⇒ <code>any</code></dt>
 <dd></dd>
-<dt><a href="#makeChildOfAnother">makeChildOfAnother(arr, arr2)</a> ⇒ <code>any</code></dt>
+<dt><a href="#makeChildOfAnother">makeChildOfAnother({data:, {data:)</a> ⇒ <code>array</code></dt>
 <dd></dd>
-<dt><a href="#getOneMakeChildOfAnother">getOneMakeChildOfAnother(arr, arr2)</a> ⇒ <code>any</code></dt>
+<dt><a href="#getOneMakeChildOfAnother">getOneMakeChildOfAnother({data:, {data:)</a> ⇒ <code>array</code></dt>
 <dd></dd>
-<dt><a href="#makeChildOfAnotherTest">makeChildOfAnotherTest()</a> ⇒ <code>any</code></dt>
-<dd><p>描述</p>
-</dd>
 <dt><a href="#removeByFunction">removeByFunction(arr, func)</a> ⇒ <code>array</code></dt>
 <dd></dd>
+<dt><a href="#replaceKey">replaceKey(arr, originalKey, replaceKey)</a> ⇒ <code>array</code></dt>
+<dd><p>replaceKey(arr, originalKey, replaceKey)</p>
+</dd>
 </dl>
 
 <a name="filterWithFuncObjectOrString"></a>
@@ -197,11 +145,11 @@ console.log(&quot;🚀 ~ file: playground.js ~ line 9 ~ output&quot;, output)</l
 **Date**: 2022-03-17  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| array | <code>any</code> |  |
-| object | <code>any</code> |  |
-| value | <code>any</code> | = undefined |
+| Param  | Type                | Description |
+|--------|---------------------|-------------|
+| array  | <code>array</code>  |             |
+| object | <code>object</code> |             |
+| value  | <code>array</code>  | = undefined |
 
 **Example**  
 ```js
@@ -230,9 +178,9 @@ trims array values
 **Author**: zen-out  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>array</code> | 
+| Param | Type               |
+|-------|--------------------|
+| arr   | <code>array</code> |
 
 <a name="countByCondition"></a>
 
@@ -242,11 +190,11 @@ trims array values
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| key | <code>string</code> | 
-| value | <code>string</code> | 
+| Param | Type                |
+|-------|---------------------|
+| array | <code>array</code>  |
+| key   | <code>string</code> |
+| value | <code>string</code> |
 
 **Example**  
 ```js
@@ -269,10 +217,10 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-03-18  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| string | <code>string</code> | 
+| Param  | Type                |
+|--------|---------------------|
+| array  | <code>array</code>  |
+| string | <code>string</code> |
 
 **Example**  
 ```js
@@ -298,19 +246,19 @@ var data = [{
 // search examples .
 console.log("found", search(data, ".net")); //expected data[0] data[1]
 ```
-<a name="filterItems"></a>
+<a name="filterValues"></a>
 
-## filterItems(array, keyword, arrOfKeys) ⇒ <code>array</code>
+## filterValues(array, keyword, arrOfKeys) ⇒ <code>array</code>
 **Kind**: global function  
 **Returns**: <code>array</code> - of objects  
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| keyword | <code>string</code> | 
-| arrOfKeys | <code>array</code> | 
+| Param     | Type                |
+|-----------|---------------------|
+| array     | <code>array</code>  |
+| keyword   | <code>string</code> |
+| arrOfKeys | <code>array</code>  |
 
 **Example**  
 ```js
@@ -328,17 +276,16 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 ```
 <a name="sortAsc"></a>
 
-## sortAsc(array, property, type) ⇒ <code>array</code>
+## sortAsc(array, key) ⇒ <code>array</code>
 **Kind**: global function  
 **Returns**: <code>array</code> - of objects  
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| array | <code>array</code> |  |
-| property | <code>string</code> |  |
-| type | <code>string</code> | (date) - optional |
+| Param | Type                | Description |
+|-------|---------------------|-------------|
+| array | <code>array</code>  |             |
+| key   | <code>string</code> | to sort by  |
 
 **Example**  
 ```js
@@ -353,16 +300,16 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 ```
 <a name="sortDesc"></a>
 
-## sortDesc(array, property) ⇒ <code>array</code>
+## sortDesc(array, key) ⇒ <code>array</code>
 **Kind**: global function  
 **Returns**: <code>array</code> - of objects  
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>string</code> | 
+| Param | Type                | Description |
+|-------|---------------------|-------------|
+| array | <code>array</code>  |             |
+| key   | <code>string</code> | of object   |
 
 **Example**  
 ```js
@@ -384,11 +331,11 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>string</code> | 
-| value | <code>string</code> | 
+| Param    | Type                |
+|----------|---------------------|
+| array    | <code>array</code>  |
+| property | <code>string</code> |
+| value    | <code>string</code> |
 
 **Example**  
 ```js
@@ -409,11 +356,11 @@ let output = arrz.contains(sampleInput, "seconds", 500)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>string</code> | 
-| value | <code>string</code> | 
+| Param    | Type                |
+|----------|---------------------|
+| array    | <code>array</code>  |
+| property | <code>string</code> |
+| value    | <code>string</code> |
 
 **Example**  
 ```js
@@ -425,33 +372,6 @@ status: "to do",
 problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
 }, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
 let output = arrz.doesNotContain(sampleInput, "seconds", 500)
-```
-<a name="filterAndSort"></a>
-
-## filterAndSort(data, object, sortValue, sortType, asc, limit) ⇒ <code>array</code>
-**Kind**: global function  
-**Date**: 2022-02-17  
-
-| Param | Type | Default |
-| --- | --- | --- |
-| data | <code>array</code> |  | 
-| object | <code>object</code> |  | 
-| sortValue | <code>string</code> |  | 
-| sortType | <code>string</code> |  | 
-| asc | <code>boolean</code> | <code>true</code> | 
-| limit | <code>number</code> |  | 
-
-**Example**  
-```js
-const { arrz } = require("./index.js")
-let sampleInput = [{
-seconds: 500,
-created: new Date(2020, 12, 1),
-status: "to do",
-problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
-}, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
-let output = arrz.filterAndSort(sampleInput, { status: "to do" }, "seconds", "number", true, 4)
-console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 ```
 <a name="group"></a>
 
@@ -471,10 +391,10 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| data | <code>array</code> | 
-| groupByCondition | <code>string</code> | 
+| Param            | Type                |
+|------------------|---------------------|
+| data             | <code>array</code>  |
+| groupByCondition | <code>string</code> |
 
 <a name="getUnique"></a>
 
@@ -483,10 +403,10 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 **Date**: 2022-03-18  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>any</code> | 
-| key | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| arr   | <code>any</code> |
+| key   | <code>any</code> |
 
 **Example**  
 ```js
@@ -516,10 +436,10 @@ export function testUnique() {
 **Date**: 2022-03-22  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| nums1 | <code>any</code> | 
-| nums2 | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| nums1 | <code>any</code> |
+| nums2 | <code>any</code> |
 
 **Example**  
 ```js
@@ -535,9 +455,9 @@ let expected_keys =["hello"]
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| arr | <code>any</code> |  |
+| Param  | Type                | Description                                                       |
+|--------|---------------------|-------------------------------------------------------------------|
+| arr    | <code>any</code>    |                                                                   |
 | object | <code>object</code> | {data: arr, key: "problem_id"} -> reference to the joining to arr |
 
 **Example**  
@@ -551,15 +471,15 @@ let merged2 = arrz.mergeByKeys(arr1Child2, arr22)
 ```
 <a name="makeChildOfAnother"></a>
 
-## makeChildOfAnother(arr, arr2) ⇒ <code>any</code>
+## makeChildOfAnother({data:, {data:) ⇒ <code>array</code>
 **Kind**: global function  
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>any</code> | 
-| arr2 | <code>any</code> | 
+| Param  | Type                | Description       |
+|--------|---------------------|-------------------|
+| {data: | <code>object</code> | arr, key: "id" }  |
+| {data: | <code>object</code> | arr2, key: "id" } |
 
 **Example**  
 ```js
@@ -612,15 +532,15 @@ output
 ```
 <a name="getOneMakeChildOfAnother"></a>
 
-## getOneMakeChildOfAnother(arr, arr2) ⇒ <code>any</code>
+## getOneMakeChildOfAnother({data:, {data:) ⇒ <code>array</code>
 **Kind**: global function  
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>any</code> | 
-| arr2 | <code>any</code> | 
+| Param  | Type                | Description       |
+|--------|---------------------|-------------------|
+| {data: | <code>object</code> | arr, key: "id" }  |
+| {data: | <code>object</code> | arr2, key: "id" } |
 
 **Example**  
 ```js
@@ -660,14 +580,6 @@ output
   }
 ]
 ```
-<a name="makeChildOfAnotherTest"></a>
-
-## makeChildOfAnotherTest() ⇒ <code>any</code>
-描述
-
-**Kind**: global function  
-**Date**: 2022-03-15  
-**Author**: zen-out  
 <a name="removeByFunction"></a>
 
 ## removeByFunction(arr, func) ⇒ <code>array</code>
@@ -675,10 +587,10 @@ output
 **Date**: 2022-03-22  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>any</code> | 
-| func | <code>function</code> | 
+| Param | Type                  |
+|-------|-----------------------|
+| arr   | <code>array</code>    |
+| func  | <code>function</code> |
 
 **Example**  
 ```js
@@ -703,4 +615,20 @@ function removeObj(x) {
         return true;
     }
 }
+arrz.removeByFunction(arr, func)
 ```
+<a name="replaceKey"></a>
+
+## replaceKey(arr, originalKey, replaceKey) ⇒ <code>array</code>
+replaceKey(arr, originalKey, replaceKey)
+
+**Kind**: global function  
+**Date**: 2022-03-23  
+**Author**: zen-out  
+
+| Param       | Type                |
+|-------------|---------------------|
+| arr         | <code>array</code>  |
+| originalKey | <code>string</code> |
+| replaceKey  | <code>string</code> |
+
