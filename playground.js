@@ -69,5 +69,3 @@ let remove = arrz.removeByFunction(arr, function removeObj(x) {
     }
 })
 let replacedKey = arrz.replaceKey(arr, originalKey, replaceKey)
-
-console.log("🚀 ~ file: playground.js ~ line 71 ~ replacedKey", replacedKey)
