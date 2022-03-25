@@ -15,7 +15,7 @@ const array_helperz =  require('array_helperz')
 <script src="./node_modules/array_helperz/index.js"></script>
 <script> 
 $(()=> { 
-     const output =  array_helperz.method(parameter)
+     const output =  arrz.method(parameter)
  })
 </script>
 ```
