@@ -15,7 +15,7 @@ const array_helperz =  require('array_helperz')
 <script src="./node_modules/array_helperz/index.js"></script>
 <script> 
 $(()=> { 
-     const output =  arrz.method(parameter)
+     const output =  array_helperz.method(parameter)
  })
 </script>
 ```
@@ -65,24 +65,24 @@ function removeObj(x) {
 }
 
 
-arrz.filterWithFuncObjectOrString(arr, { status: "to do" })
-arrz.trimArr(arr) // trims if value is string
-arrz.countByCondition(arr, "id", 1) // returns number
-arrz.search(arr, stringValue) // returns arr
-arrz.filterItems(arr, stringKey, stringValue) // search for specific key 
-arrz.filterValues(arr, stringValue, arrOfKeys)
-arrz.sortAsc(arr, stringKey)
-arrz.sortDesc(arr, stringKey)
-arrz.contains(arr, stringKey, stringValue)
-arrz.doesNotContain(arr, stringKey, stringValue)
-arrz.group(arr, stringKey)
-arrz.getUnique(arr, stringKey)
-arrz.intersection(arr, arr2)
-arrz.mergeByKeys({data: arr, key: "id" }, {data: arr2, key: "id" })
-arrz.makeChildOfAnother({data: arr, key: "id" }, {data: arr2, key: "id" })
-arrz.getOneMakeChildOfAnother({data: arr, key: "id", value: 2 }, {data: arr2, key: "id", value: 3 })
-arrz.removeByFunction(arr, function sort(x) {if (x.id === 1 {return true})})
-arrz.replaceKey(arr, originalKey, replaceKey)
+array_helperz.filterWithFuncObjectOrString(arr, { status: "to do" })
+array_helperz.trimArr(arr) // trims if value is string
+array_helperz.countByCondition(arr, "id", 1) // returns number
+array_helperz.search(arr, stringValue) // returns arr
+array_helperz.filterItems(arr, stringKey, stringValue) // search for specific key 
+array_helperz.filterValues(arr, stringValue, arrOfKeys)
+array_helperz.sortAsc(arr, stringKey)
+array_helperz.sortDesc(arr, stringKey)
+array_helperz.contains(arr, stringKey, stringValue)
+array_helperz.doesNotContain(arr, stringKey, stringValue)
+array_helperz.group(arr, stringKey)
+array_helperz.getUnique(arr, stringKey)
+array_helperz.intersection(arr, arr2)
+array_helperz.mergeByKeys({data: arr, key: "id" }, {data: arr2, key: "id" })
+array_helperz.makeChildOfAnother({data: arr, key: "id" }, {data: arr2, key: "id" })
+array_helperz.getOneMakeChildOfAnother({data: arr, key: "id", value: 2 }, {data: arr2, key: "id", value: 3 })
+array_helperz.removeByFunction(arr, function sort(x) {if (x.id === 1 {return true})})
+array_helperz.replaceKey(arr, originalKey, replaceKey)
 ```
 
 ## Functions
@@ -117,7 +117,7 @@ created: new Date(2020, 12, 1),
 status: &quot;to do&quot;,
 problem: &quot;we actually solve our problems best by looking at how other people solved them - segment each feature&quot;,
 }, { seconds: 1000, created: new Date(2019, 12, 1), status: &quot;doing&quot;, problem: &quot;we need to focus on one thing at a time&quot; }]
-let output = arrz.group(sampleInput, &quot;status&quot;)
+let output = array_helperz.group(sampleInput, &quot;status&quot;)
 console.log(&quot;🚀 ~ file: playground.js ~ line 9 ~ output&quot;, output)</li>
 </ul>
 </dd>
@@ -145,11 +145,11 @@ console.log(&quot;🚀 ~ file: playground.js ~ line 9 ~ output&quot;, output)</l
 **Date**: 2022-03-17  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| array | <code>array</code> |  |
-| object | <code>object</code> |  |
-| value | <code>array</code> | = undefined |
+| Param  | Type                | Description |
+|--------|---------------------|-------------|
+| array  | <code>array</code>  |             |
+| object | <code>object</code> |             |
+| value  | <code>array</code>  | = undefined |
 
 **Example**  
 ```js
@@ -178,9 +178,9 @@ trims array values
 **Author**: zen-out  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>array</code> | 
+| Param | Type               |
+|-------|--------------------|
+| arr   | <code>array</code> |
 
 <a name="countByCondition"></a>
 
@@ -190,11 +190,11 @@ trims array values
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| key | <code>string</code> | 
-| value | <code>string</code> | 
+| Param | Type                |
+|-------|---------------------|
+| array | <code>array</code>  |
+| key   | <code>string</code> |
+| value | <code>string</code> |
 
 **Example**  
 ```js
@@ -207,7 +207,7 @@ whatactuallyis: "there's no like, database of previous problems and how people s
 hypothesis: "like, what if i wanted to start my own business, how would i do that?",
 plan: "test better, when you develop, i think it would also be great actually to have an effectiveness scale - what one task really helped you?"
 }, { status: "doing", problem: "we need to focus on one thing at a time", whatshouldbe: "we should be able to do that easily", whatactuallyis: "its quite difficult", hypothesis: "develop modules", plan: "make things very clear and simple" }]
-let output = arrz.countByCondition(sampleInput, "status", "to do")
+let output = array_helperz.countByCondition(sampleInput, "status", "to do")
 console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 ```
 <a name="search"></a>
@@ -217,10 +217,10 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-03-18  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| string | <code>string</code> | 
+| Param  | Type                |
+|--------|---------------------|
+| array  | <code>array</code>  |
+| string | <code>string</code> |
 
 **Example**  
 ```js
@@ -254,11 +254,11 @@ console.log("found", search(data, ".net")); //expected data[0] data[1]
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| keyword | <code>string</code> | 
-| arrOfKeys | <code>array</code> | 
+| Param     | Type                |
+|-----------|---------------------|
+| array     | <code>array</code>  |
+| keyword   | <code>string</code> |
+| arrOfKeys | <code>array</code>  |
 
 **Example**  
 ```js
@@ -271,7 +271,7 @@ whatactuallyis: "there's no like, database of previous problems and how people s
 hypothesis: "like, what if i wanted to start my own business, how would i do that?",
 plan: "test better, when you develop, i think it would also be great actually to have an effectiveness scale - what one task really helped you?"
 }, { status: "doing", problem: "we need to focus on one thing at a time", whatshouldbe: "we should be able to do that easily", whatactuallyis: "its quite difficult", hypothesis: "develop modules", plan: "make things very clear and simple" }]
-let output = arrz.filterValues(sampleInput, "segment", ["problem"])
+let output = array_helperz.filterValues(sampleInput, "segment", ["problem"])
 console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 ```
 <a name="sortAsc"></a>
@@ -282,10 +282,10 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| array | <code>array</code> |  |
-| key | <code>string</code> | to sort by |
+| Param | Type                | Description |
+|-------|---------------------|-------------|
+| array | <code>array</code>  |             |
+| key   | <code>string</code> | to sort by  |
 
 **Example**  
 ```js
@@ -295,7 +295,7 @@ created: new Date(2020, 12, 1),
 status: "to do",
 problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
 }, { created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
-let output = arrz.sortAsc(sampleInput, "created", "date")
+let output = array_helperz.sortAsc(sampleInput, "created", "date")
 console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 ```
 <a name="sortDesc"></a>
@@ -306,10 +306,10 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| array | <code>array</code> |  |
-| key | <code>string</code> | of object |
+| Param | Type                | Description |
+|-------|---------------------|-------------|
+| array | <code>array</code>  |             |
+| key   | <code>string</code> | of object   |
 
 **Example**  
 ```js
@@ -320,7 +320,7 @@ created: new Date(2020, 12, 1),
 status: "to do",
 problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
 }, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
-let output = arrz.sortDesc(sampleInput, "seconds", "integer")
+let output = array_helperz.sortDesc(sampleInput, "seconds", "integer")
 console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 ```
 <a name="contains"></a>
@@ -331,11 +331,11 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>string</code> | 
-| value | <code>string</code> | 
+| Param    | Type                |
+|----------|---------------------|
+| array    | <code>array</code>  |
+| property | <code>string</code> |
+| value    | <code>string</code> |
 
 **Example**  
 ```js
@@ -346,7 +346,7 @@ created: new Date(2020, 12, 1),
 status: "to do",
 problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
 }, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
-let output = arrz.contains(sampleInput, "seconds", 500)
+let output = array_helperz.contains(sampleInput, "seconds", 500)
 ```
 <a name="doesNotContain"></a>
 
@@ -356,11 +356,11 @@ let output = arrz.contains(sampleInput, "seconds", 500)
 **Date**: 2022-02-17  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| array | <code>array</code> | 
-| property | <code>string</code> | 
-| value | <code>string</code> | 
+| Param    | Type                |
+|----------|---------------------|
+| array    | <code>array</code>  |
+| property | <code>string</code> |
+| value    | <code>string</code> |
 
 **Example**  
 ```js
@@ -371,7 +371,7 @@ created: new Date(2020, 12, 1),
 status: "to do",
 problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
 }, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
-let output = arrz.doesNotContain(sampleInput, "seconds", 500)
+let output = array_helperz.doesNotContain(sampleInput, "seconds", 500)
 ```
 <a name="group"></a>
 
@@ -384,17 +384,17 @@ created: new Date(2020, 12, 1),
 status: "to do",
 problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
 }, { seconds: 1000, created: new Date(2019, 12, 1), status: "doing", problem: "we need to focus on one thing at a time" }]
-let output = arrz.group(sampleInput, "status")
+let output = array_helperz.group(sampleInput, "status")
 console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 
 **Kind**: global function  
 **Date**: 2022-03-06  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| data | <code>array</code> | 
-| groupByCondition | <code>string</code> | 
+| Param            | Type                |
+|------------------|---------------------|
+| data             | <code>array</code>  |
+| groupByCondition | <code>string</code> |
 
 <a name="getUnique"></a>
 
@@ -403,10 +403,10 @@ console.log("🚀 ~ file: playground.js ~ line 9 ~ output", output)
 **Date**: 2022-03-18  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>any</code> | 
-| key | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| arr   | <code>any</code> |
+| key   | <code>any</code> |
 
 **Example**  
 ```js
@@ -436,10 +436,10 @@ export function testUnique() {
 **Date**: 2022-03-22  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| nums1 | <code>any</code> | 
-| nums2 | <code>any</code> | 
+| Param | Type             |
+|-------|------------------|
+| nums1 | <code>any</code> |
+| nums2 | <code>any</code> |
 
 **Example**  
 ```js
@@ -455,9 +455,9 @@ let expected_keys =["hello"]
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| arr | <code>any</code> |  |
+| Param  | Type                | Description                                                       |
+|--------|---------------------|-------------------------------------------------------------------|
+| arr    | <code>any</code>    |                                                                   |
 | object | <code>object</code> | {data: arr, key: "problem_id"} -> reference to the joining to arr |
 
 **Example**  
@@ -467,7 +467,7 @@ let arr22 = {
     data: arr2,
     key: "id",
 }
-let merged2 = arrz.mergeByKeys(arr1Child2, arr22)
+let merged2 = array_helperz.mergeByKeys(arr1Child2, arr22)
 ```
 <a name="makeChildOfAnother"></a>
 
@@ -476,9 +476,9 @@ let merged2 = arrz.mergeByKeys(arr1Child2, arr22)
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| {data: | <code>object</code> | arr, key: "id" } |
+| Param  | Type                | Description       |
+|--------|---------------------|-------------------|
+| {data: | <code>object</code> | arr, key: "id" }  |
 | {data: | <code>object</code> | arr2, key: "id" } |
 
 **Example**  
@@ -537,9 +537,9 @@ output
 **Date**: 2022-03-15  
 **Author**: zen-out  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| {data: | <code>object</code> | arr, key: "id", value: 2 } |
+| Param  | Type                | Description                 |
+|--------|---------------------|-----------------------------|
+| {data: | <code>object</code> | arr, key: "id", value: 2 }  |
 | {data: | <code>object</code> | arr2, key: "id", value: 3 } |
 
 **Example**  
@@ -587,10 +587,10 @@ output
 **Date**: 2022-03-22  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>array</code> | 
-| func | <code>function</code> | 
+| Param | Type                  |
+|-------|-----------------------|
+| arr   | <code>array</code>    |
+| func  | <code>function</code> |
 
 **Example**  
 ```js
@@ -615,7 +615,7 @@ function removeObj(x) {
         return true;
     }
 }
-arrz.removeByFunction(arr, func)
+array_helperz.removeByFunction(arr, func)
 ```
 <a name="replaceKey"></a>
 
@@ -626,9 +626,9 @@ replaceKey(arr, originalKey, replaceKey)
 **Date**: 2022-03-23  
 **Author**: zen-out  
 
-| Param | Type |
-| --- | --- |
-| arr | <code>array</code> | 
-| originalKey | <code>string</code> | 
-| replaceKey | <code>string</code> | 
+| Param       | Type                |
+|-------------|---------------------|
+| arr         | <code>array</code>  |
+| originalKey | <code>string</code> |
+| replaceKey  | <code>string</code> |
 
