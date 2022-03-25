@@ -110,7 +110,7 @@ array_helperz.replaceKey(arr, originalKey, replaceKey)
 <dt><a href="#group">group(data, groupByCondition)</a> ⇒ <code>array</code></dt>
 <dd><ul>
 <li>@example
-const { arrz } = require(&quot;./index.js&quot;)
+const array_helperz = require(&quot;./index.js&quot;)
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -198,7 +198,7 @@ trims array values
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const array_helperz = require("array_helperz")
 let sampleInput = [{
 status: "to do",
 problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
@@ -262,7 +262,7 @@ console.log("found", search(data, ".net")); //expected data[0] data[1]
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const array_helperz = require("array_helperz")
 let sampleInput = [{
 status: "to do",
 problem: "we actually solve our problems best by looking at how other people solved them - segment each feature",
@@ -289,7 +289,7 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const array_helperz = require("array_helperz")
 let sampleInput = [{
 created: new Date(2020, 12, 1),
 status: "to do",
@@ -313,7 +313,7 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const array_helperz = require("array_helperz")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -339,7 +339,7 @@ console.log("🚀 ~ file: playground.js ~ line 11 ~ output", output)
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const array_helperz = require("array_helperz")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -364,7 +364,7 @@ let output = array_helperz.contains(sampleInput, "seconds", 500)
 
 **Example**  
 ```js
-const { arrz } = require("./index.js")
+const array_helperz = require("array_helperz")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
@@ -377,7 +377,7 @@ let output = array_helperz.doesNotContain(sampleInput, "seconds", 500)
 
 ## group(data, groupByCondition) ⇒ <code>array</code>
 * @example
-const { arrz } = require("./index.js")
+const array_helperz = require("array_helperz")
 let sampleInput = [{
 seconds: 500,
 created: new Date(2020, 12, 1),
